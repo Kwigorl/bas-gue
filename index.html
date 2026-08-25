@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bas-Gué — un jeu de rôle</title>
+<meta name="description" content="Bas-Gué : un port où l'on fait pousser les maisons, où l'on greffe les outils, et où l'argent n'existe pas. Manuels, règles et création de personnage.">
+<meta property="og:title" content="Bas-Gué — un jeu de rôle">
+<meta property="og:description" content="Un port où l'on fait pousser les maisons. Deux manuels, dix familles de greffes, une création de personnage en dix minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,0..100,0..1;1,9..144,400..800,0..100,0..1&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/accueil.css">
+<link rel="icon" href="assets/lichen.svg">
+<script>try{var t=localStorage.getItem('basgue-lampe');if(t)document.documentElement.dataset.lampe=t;}catch(e){}</script>
+</head>
+<body class="page-accueil">
+
+<a class="saut-contenu" href="#seuil">Aller au contenu</a>
+
+<header class="barre">
+  <a class="marque" href="index.html"><span class="marque-nom">Bas-Gué</span><span class="marque-sous">jeu de rôle</span></a>
+  <nav class="barre-nav">
+    <a href="manuel-joueureuses.html">Joueureuses</a>
+    <a href="manuel-meneur.html">Meneur</a>
+    <a href="creation.html">Créer un personnage</a>
+  </nav>
+  <div class="barre-outils">
+    <button class="lampe" id="lampe" type="button" aria-pressed="false" title="Allumer ou éteindre le lichen">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle class="lampe-halo" cx="12" cy="11" r="9"/><path d="M12 3.5c-3 0-5.2 2.2-5.2 5 0 2 1.1 3.1 1.9 4.1.6.7.9 1.3.9 2.1h4.8c0-.8.3-1.4.9-2.1.8-1 1.9-2.1 1.9-4.1 0-2.8-2.2-5-5.2-5z"/><path d="M9.6 17.4h4.8M10.4 19.6h3.2"/></svg>
+      <span class="visuellement-cache">Lumière</span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<section class="entree">
+  <div class="entree-texte">
+    <p class="eyebrow">Un port sur le fleuve · entre l’amont et Vasque</p>
+    <h1>Bas-Gué est un<br>bateau qui s’est<br><em>enraciné.</em></h1>
+    <p class="entree-dit">On n’y bâtit pas les maisons : <strong>on les fait pousser</strong>. On n’y forge pas les outils : <strong>on les greffe</strong>. On n’y répare rien : <strong>on soigne</strong>. Vous jouez des animaux debout qui parlent, travaillent, plaident et héritent, dans une ville où l’argent n’existe pas — seulement ce qu’on vous doit et ce que vous devez.</p>
+    <div class="entree-boutons">
+      <a class="cta cta-plein" href="manuel-joueureuses.html">Lire le manuel des joueureuses</a>
+      <a class="cta" href="creation.html">Créer un personnage</a>
+    </div>
+  </div>
+
+  <div class="entree-image" aria-hidden="true">
+    <svg viewBox="0 0 420 380" class="coque">
+      <defs>
+        <linearGradient id="fil" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="var(--seve)" stop-opacity=".9"/>
+          <stop offset="1" stop-color="var(--seve)" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <!-- ligne d'eau -->
+      <path class="ligne-eau" d="M6,208 C70,198 110,216 176,210 C242,204 286,192 350,202 C382,207 400,210 414,208"/>
+      <path class="ligne-eau faible" d="M6,222 C74,214 112,230 178,224 C244,218 290,208 352,216 C384,220 402,222 414,220"/>
+      <!-- coque -->
+      <path class="coque-trait" d="M78,150 C96,196 140,214 208,214 C276,214 322,194 340,150 Z"/>
+      <path class="coque-trait" d="M78,150 C150,162 268,162 340,150"/>
+      <!-- mât vivant / bourgeon -->
+      <path class="coque-trait" d="M209,150 C206,110 208,84 212,58"/>
+      <path class="branche" d="M211,104 C186,96 172,80 166,60"/>
+      <path class="branche" d="M210,84 C232,76 248,60 254,40"/>
+      <path class="branche" d="M212,66 C200,54 196,40 198,26"/>
+      <g class="feuille">
+        <ellipse cx="164" cy="57" rx="9" ry="5" transform="rotate(-28 164 57)"/>
+        <ellipse cx="257" cy="37" rx="9" ry="5" transform="rotate(24 257 37)"/>
+        <ellipse cx="198" cy="22" rx="8" ry="4.5" transform="rotate(-70 198 22)"/>
+        <ellipse cx="176" cy="76" rx="7" ry="4" transform="rotate(-20 176 76)"/>
+        <ellipse cx="243" cy="58" rx="7" ry="4" transform="rotate(18 243 58)"/>
+      </g>
+      <!-- lampes-lichens -->
+      <circle class="lichen-point" cx="150" cy="176" r="3.4"/>
+      <circle class="lichen-point" cx="209" cy="184" r="3.4"/>
+      <circle class="lichen-point" cx="268" cy="176" r="3.4"/>
+      <!-- racines sous l'eau -->
+      <g class="racines">
+        <path d="M132,214 C124,248 106,268 84,296 C70,314 64,330 62,348"/>
+        <path d="M178,214 C174,254 168,282 160,312 C154,334 152,348 152,362"/>
+        <path d="M228,214 C234,252 246,278 258,304 C270,330 274,344 276,358"/>
+        <path d="M282,214 C292,244 312,262 334,286 C350,304 358,320 360,338"/>
+        <path d="M205,214 C204,258 202,296 206,340"/>
+        <path d="M160,270 C142,282 128,296 120,314"/>
+        <path d="M252,278 C270,288 288,300 298,318"/>
+      </g>
+      <path class="fil-seve" d="M205,214 C204,258 202,296 206,340" stroke="url(#fil)"/>
+    </svg>
+  </div>
+</section>
+
+<section class="bande">
+  <p>Le nom dit les deux choses : <strong>le gué qu’on traverse</strong>, et <strong>le Gué qu’on tient</strong>.</p>
+</section>
+
+<section class="socle" id="seuil">
+  <div class="socle-texte">
+    <p class="eyebrow">Le socle</p>
+    <h2>Un dé, une statistique, un Seuil</h2>
+    <p>Le meneur annonce toujours le Seuil et la statistique avant que tu lances : tu sais contre quoi tu joues. Et on ne lance que si l’échec changerait quelque chose — sinon, c’est oui.</p>
+    <p class="socle-formule"><span>d20</span> + <span>statistique</span> + <span>modificateurs</span></p>
+    <ul class="socle-resultats">
+      <li><b>Franc</b> — Seuil + 5 ou plus. Tu réussis, et tu gagnes quelque chose en plus.</li>
+      <li><b>Court</b> — au Seuil. Tu réussis, mais quelque chose tourne mal, tout de suite.</li>
+      <li><b>Manqué</b> — sous le Seuil. Tu échoues, et la scène avance quand même.</li>
+    </ul>
+  </div>
+
+  <div class="de-boite">
+    <p class="de-titre">Essaie</p>
+    <label class="de-seuil">Seuil
+      <select id="de-seuil">
+        <option value="8">8 — facile</option>
+        <option value="11" selected>11 — courant</option>
+        <option value="14">14 — difficile</option>
+        <option value="17">17 — très difficile</option>
+        <option value="20">20 — on en parlera longtemps</option>
+      </select>
+    </label>
+    <label class="de-seuil">Modificateur
+      <select id="de-mod">
+        <option value="-2">−2</option>
+        <option value="0">0</option>
+        <option value="2">+2</option>
+        <option value="3" selected>+3</option>
+        <option value="5">+5</option>
+      </select>
+    </label>
+    <button class="de-lancer" id="de-lancer" type="button">Lancer le d20</button>
+    <p class="de-resultat" id="de-resultat" aria-live="polite"><span class="de-chiffre">—</span><span class="de-verdict">le dé attend</span></p>
+  </div>
+</section>
+
+<section class="grille-idees">
+  <article>
+    <h3>Les greffes</h3>
+    <p>On n’apprend pas un métier en dix ans : <strong>on se fait greffer</strong>. Une chose vivante pousse en toi, et tu sais faire. Elle pousse entre deux statistiques et ne se nourrit jamais mieux que par la plus maigre des deux — un point à 1 ferme quatre familles sur dix.</p>
+    <p class="lien-vers"><a href="manuel-joueureuses.html#v-les-greffes">Les dix familles →</a></p>
+  </article>
+  <article>
+    <h3>Il n’y a pas d’argent</h3>
+    <p>Il y a ce que tu portes, ce qu’on te doit et ce que tu dois. Ta Position est ton porte-monnaie ; le reste se paie en <strong>dettes</strong>, qui ont toujours un visage. À Vasque, on les écrit — et on les revend.</p>
+    <p class="lien-vers"><a href="manuel-joueureuses.html#xi-l-economie">L’économie →</a></p>
+  </article>
+  <article>
+    <h3>Trois lieux, trois portes</h3>
+    <p>Une enquête ne se bloque jamais sur un mauvais dé : elle se paie plus cher. La parole, la trace, le registre — les trois fonctionnent toujours. Ce qui varie n’est pas <em>si</em> tu trouves, mais <strong>par qui, à quel prix, et avec quel retard</strong>.</p>
+    <p class="lien-vers"><a href="manuel-joueureuses.html#ix-l-enquete">L’enquête →</a></p>
+  </article>
+  <article>
+    <h3>Tomber, et rester à terre</h3>
+    <p>À zéro point de vie, un seul coup de plus te tue. Relevé avant que ton camp ne rejoue : rien. Plus tard dans la scène : une <strong>marque</strong>, définitive. Jamais : la mort. Le jeu récompense de se porter secours.</p>
+    <p class="lien-vers"><a href="manuel-joueureuses.html#vii-tomber-les-marques-la-mort">Les marques →</a></p>
+  </article>
+</section>
+
+<section class="inclinaison">
+  <p class="eyebrow">L’Inclinaison</p>
+  <div class="regle">
+    <span class="bord bord-sauvage">Sauvage<small>le vivant qu’on ne contraint pas</small></span>
+    <div class="regle-ligne">
+      <i style="left:0%"></i><i style="left:16.6%"></i><i style="left:33.3%"></i>
+      <i class="gue" style="left:50%"></i>
+      <i style="left:66.6%"></i><i style="left:83.3%"></i><i style="left:100%"></i>
+      <span class="regle-gue">au Gué</span>
+    </div>
+    <span class="bord bord-greffe">Greffé<small>le vivant qu’on façonne</small></span>
+  </div>
+  <p class="inclinaison-dit">Elle ne bouge que sur des actes <strong>publics</strong> : témoigner, refuser une greffe qu’on t’offre, éveiller quelque chose devant témoins, brûler un champ de spores. Jamais en secret — elle mesure ce qu’on sait de toi, pas ce que tu penses. Aux extrêmes, les portes et la morsure arrivent ensemble.</p>
+  <p class="lien-vers"><a href="manuel-joueureuses.html#viii-l-inclinaison">Lire l’Inclinaison →</a></p>
+</section>
+
+<section class="manuels">
+  <a class="manuel" href="manuel-joueureuses.html">
+    <span class="manuel-eyebrow">Manuel</span>
+    <h3>Des joueureuses</h3>
+    <p>Le monde, le socle, la création, les dix familles de greffes, le combat et les surfaces vivantes, les marques, l’Inclinaison, l’enquête, l’équipement, l’économie, la Gousse.</p>
+    <span class="manuel-fleche">Ouvrir →</span>
+  </a>
+  <a class="manuel" href="manuel-meneur.html">
+    <span class="manuel-eyebrow">Manuel</span>
+    <h3>Du meneur</h3>
+    <p>La forme d’une séance, la séance zéro, les six lieux et les dix habitués, préparer une enquête en quinze minutes, l’opposition en quatre lignes, la boucle de campagne.</p>
+    <span class="manuel-fleche">Ouvrir →</span>
+  </a>
+  <a class="manuel manuel-atelier" href="creation.html">
+    <span class="manuel-eyebrow">Atelier</span>
+    <h3>Créer un personnage</h3>
+    <p>Dix étapes, dix minutes. La fiche se remplit à mesure, calcule les points de vie, la Défense et le rang de chaque greffe — puis s’imprime.</p>
+    <span class="manuel-fleche">Commencer →</span>
+  </a>
+</section>
+
+</main>
+
+<footer class="pied-site">
+  <p><strong>Bas-Gué</strong> — un port, un tribunal dans un arbre, et un bateau qui a pris racine.</p>
+  <p class="pied-liens"><a href="manuel-joueureuses.html">Manuel des joueureuses</a> · <a href="manuel-meneur.html">Manuel du meneur</a> · <a href="creation.html">Créer un personnage</a></p>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+(function(){
+  var b=document.getElementById('de-lancer'),r=document.getElementById('de-resultat');
+  if(!b)return;
+  b.addEventListener('click',function(){
+    var seuil=parseInt(document.getElementById('de-seuil').value,10);
+    var mod=parseInt(document.getElementById('de-mod').value,10);
+    var de=1+Math.floor(Math.random()*20), total=de+mod, verdict, cls;
+    if(de===20){verdict='20 naturel — franc, quel que soit le Seuil';cls='franc';}
+    else if(de===1){verdict='1 naturel — manqué. Si le geste te ressemblait, le meneur coche une case de trait';cls='manque';}
+    else if(total>=seuil+5){verdict='franc — tu réussis, et tu gagnes quelque chose en plus';cls='franc';}
+    else if(total>=seuil){verdict='court — tu réussis, mais quelque chose tourne mal';cls='court';}
+    else {verdict='manqué — tu échoues, et la scène avance quand même';cls='manque';}
+    r.className='de-resultat '+cls;
+    r.innerHTML='<span class="de-chiffre">'+total+'</span><span class="de-verdict">'+
+      'd20 : '+de+(mod?(mod>0?' + '+mod:' − '+Math.abs(mod)):'')+' · seuil '+seuil+'<br>'+verdict+'</span>';
+  });
+})();
+</script>
+</body>
+</html>

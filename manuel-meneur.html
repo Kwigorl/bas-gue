@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manuel du meneur — Bas-Gué</title>
+<meta name="description" content="Bas-Gué, jeu de rôle. Manuel du meneur.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,0..100,0..1;1,9..144,400..800,0..100,0..1&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/lichen.svg">
+<script>try{var t=localStorage.getItem('basgue-lampe');if(t)document.documentElement.dataset.lampe=t;}catch(e){}</script>
+</head>
+<body class="page-manuel">
+
+<a class="saut-contenu" href="#corps">Aller au texte</a>
+
+<header class="barre">
+  <a class="marque" href="index.html"><span class="marque-nom">Bas-Gué</span><span class="marque-sous">jeu de rôle</span></a>
+  <nav class="barre-nav">
+    <a href="manuel-joueureuses.html">Joueureuses</a>
+    <a href="manuel-meneur.html" aria-current="page">Meneur</a>
+    <a href="creation.html">Créer un personnage</a>
+  </nav>
+  <div class="barre-outils">
+    <label class="champ-recherche">
+      <span class="visuellement-cache">Chercher dans le manuel</span>
+      <input type="search" id="recherche" placeholder="Chercher une règle…" autocomplete="off">
+    </label>
+    <button class="lampe" id="lampe" type="button" aria-pressed="false" title="Allumer ou éteindre le lichen">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle class="lampe-halo" cx="12" cy="11" r="9"/><path d="M12 3.5c-3 0-5.2 2.2-5.2 5 0 2 1.1 3.1 1.9 4.1.6.7.9 1.3.9 2.1h4.8c0-.8.3-1.4.9-2.1.8-1 1.9-2.1 1.9-4.1 0-2.8-2.2-5-5.2-5z"/><path d="M9.6 17.4h4.8M10.4 19.6h3.2"/></svg>
+      <span class="visuellement-cache">Lumière</span>
+    </button>
+    <button class="bouton-sommaire" id="ouvrir-sommaire" type="button" aria-expanded="false">Sommaire</button>
+  </div>
+</header>
+
+<div class="disposition">
+  <aside class="sommaire" id="sommaire">
+    <p class="sommaire-titre">Manuel du meneur</p>
+    <nav class="sommaire-liens" id="sommaire-liens">
+      <a class="toc-n1" href="#i-mener-bas-gue" data-cible="i-mener-bas-gue">I. Mener Bas-Gué</a>
+<a class="toc-n2" href="#la-forme-d-une-seance" data-cible="la-forme-d-une-seance">La forme d'une séance</a>
+<a class="toc-n2" href="#cinq-consignes" data-cible="cinq-consignes">Cinq consignes</a>
+<a class="toc-n2" href="#ce-qui-se-subit-et-ce-qui-se-construit" data-cible="ce-qui-se-subit-et-ce-qui-se-construit">Ce qui se subit et ce qui se construit</a>
+<a class="toc-n1" href="#ii-la-seance-zero" data-cible="ii-la-seance-zero">II. La séance zéro</a>
+<a class="toc-n2" href="#le-test-de-la-porte" data-cible="le-test-de-la-porte">Le test de la porte</a>
+<a class="toc-n2" href="#l-espece-ne-determine-pas-la-position" data-cible="l-espece-ne-determine-pas-la-position">L'espèce ne détermine pas la Position</a>
+<a class="toc-n2" href="#ce-qu-on-ne-joue-pas" data-cible="ce-qu-on-ne-joue-pas">Ce qu'on ne joue pas</a>
+<a class="toc-n2" href="#ce-qu-on-annonce-a-voix-haute" data-cible="ce-qu-on-annonce-a-voix-haute">Ce qu'on annonce à voix haute</a>
+<a class="toc-n2" href="#les-trois-questions-collectives" data-cible="les-trois-questions-collectives">Les trois questions collectives</a>
+<a class="toc-n2" href="#s-arreter" data-cible="s-arreter">S'arrêter</a>
+<a class="toc-n2" href="#ta-check-list" data-cible="ta-check-list">Ta check-list</a>
+<a class="toc-n1" href="#iii-le-monde-en-pratique" data-cible="iii-le-monde-en-pratique">III. Le monde en pratique</a>
+<a class="toc-n2" href="#compter-le-fleuve" data-cible="compter-le-fleuve">Compter le fleuve</a>
+<a class="toc-n2" href="#les-six-lieux" data-cible="les-six-lieux">Les six lieux</a>
+<a class="toc-n3" href="#le-port-et-les-quais" data-cible="le-port-et-les-quais">Le port et les quais</a>
+<a class="toc-n3" href="#le-tribunal-dans-l-arbre" data-cible="le-tribunal-dans-l-arbre">Le tribunal dans l'arbre</a>
+<a class="toc-n3" href="#les-entrepots" data-cible="les-entrepots">Les entrepôts</a>
+<a class="toc-n3" href="#les-hauts-quartiers" data-cible="les-hauts-quartiers">Les hauts quartiers</a>
+<a class="toc-n3" href="#vasque-en-aval" data-cible="vasque-en-aval">Vasque — en aval</a>
+<a class="toc-n3" href="#l-amont-les-villages" data-cible="l-amont-les-villages">L'amont — les villages</a>
+<a class="toc-n2" href="#les-dix-habitues" data-cible="les-dix-habitues">Les dix habitués</a>
+<a class="toc-n3" href="#sur-les-quais" data-cible="sur-les-quais">Sur les quais</a>
+<a class="toc-n3" href="#au-tribunal" data-cible="au-tribunal">Au tribunal</a>
+<a class="toc-n3" href="#aux-entrepots" data-cible="aux-entrepots">Aux entrepôts</a>
+<a class="toc-n3" href="#dans-les-hauts-quartiers" data-cible="dans-les-hauts-quartiers">Dans les hauts quartiers</a>
+<a class="toc-n3" href="#a-vasque" data-cible="a-vasque">À Vasque</a>
+<a class="toc-n3" href="#en-amont" data-cible="en-amont">En amont</a>
+<a class="toc-n2" href="#improviser-un-habitue" data-cible="improviser-un-habitue">Improviser un habitué</a>
+<a class="toc-n1" href="#iv-preparer-une-enquete" data-cible="iv-preparer-une-enquete">IV. Préparer une enquête</a>
+<a class="toc-n2" href="#d-ou-vient-une-enquete" data-cible="d-ou-vient-une-enquete">D'où vient une enquête</a>
+<a class="toc-n2" href="#quatre-lignes" data-cible="quatre-lignes">Quatre lignes</a>
+<a class="toc-n2" href="#conduire-les-portes" data-cible="conduire-les-portes">Conduire les portes</a>
+<a class="toc-n2" href="#tenir-la-rumeur" data-cible="tenir-la-rumeur">Tenir la rumeur</a>
+<a class="toc-n2" href="#improviser-une-enquete-en-trente-secondes" data-cible="improviser-une-enquete-en-trente-secondes">Improviser une enquête en trente secondes</a>
+<a class="toc-n1" href="#v-l-opposition" data-cible="v-l-opposition">V. L'opposition</a>
+<a class="toc-n2" href="#quand-et-combien" data-cible="quand-et-combien">Quand et combien</a>
+<a class="toc-n2" href="#le-format" data-cible="le-format">Le format</a>
+<a class="toc-n2" href="#les-trois-gabarits" data-cible="les-trois-gabarits">Les trois gabarits</a>
+<a class="toc-n3" href="#deux-regles-sur-le-redoutable" data-cible="deux-regles-sur-le-redoutable">Deux règles sur le Redoutable</a>
+<a class="toc-n3" href="#les-comparses-lachent" data-cible="les-comparses-lachent">Les comparses lâchent</a>
+<a class="toc-n2" href="#doser-une-rencontre" data-cible="doser-une-rencontre">Doser une rencontre</a>
+<a class="toc-n2" href="#huit-adversaires" data-cible="huit-adversaires">Huit adversaires</a>
+<a class="toc-n3" href="#adversaires-de-la-ville" data-cible="adversaires-de-la-ville">Adversaires de la ville</a>
+<a class="toc-n3" href="#adversaires-d-amont" data-cible="adversaires-d-amont">Adversaires d'amont</a>
+<a class="toc-n2" href="#improviser-un-adversaire-en-trente-secondes" data-cible="improviser-un-adversaire-en-trente-secondes">Improviser un adversaire en trente secondes</a>
+<a class="toc-n1" href="#vi-la-boucle-de-campagne" data-cible="vi-la-boucle-de-campagne">VI. La boucle de campagne</a>
+<a class="toc-n2" href="#la-premiere-aventure" data-cible="la-premiere-aventure">La première aventure</a>
+<a class="toc-n2" href="#les-aventures-suivantes" data-cible="les-aventures-suivantes">Les aventures suivantes</a>
+<a class="toc-n2" href="#ce-que-chaque-bord-attire" data-cible="ce-que-chaque-bord-attire">Ce que chaque bord attire</a>
+<a class="toc-n2" href="#le-genre-de-la-campagne" data-cible="le-genre-de-la-campagne">Le genre de la campagne</a>
+<a class="toc-n1" href="#vii-improviser" data-cible="vii-improviser">VII. Improviser</a>
+<a class="toc-n2" href="#un-trait" data-cible="un-trait">Un trait</a>
+<a class="toc-n2" href="#un-objet" data-cible="un-objet">Un objet</a>
+<a class="toc-n2" href="#une-option-nouvelle" data-cible="une-option-nouvelle">Une option nouvelle</a>
+<a class="toc-n1" href="#viii-aide-memoire-du-meneur" data-cible="viii-aide-memoire-du-meneur">VIII. Aide-mémoire du meneur</a>
+    </nav>
+    <p class="sommaire-vide" id="sommaire-vide" hidden>Rien sous ce mot. Essaie un autre.</p>
+  </aside>
+
+  <main class="corps" id="corps">
+    <h1 id="bas-gue-manuel-du-meneur" class="titre-n1"><a class="ancre" href="#bas-gue-manuel-du-meneur" aria-label="Lien vers cette section">§</a><span class="intitule">Bas-Gué — Manuel du meneur</span></h1>
+<p><em>Ce manuel suppose le <a class="lien-interne" href="manuel-joueureuses.html">Manuel des joueureuses</a> connu. Il ne répète aucune règle : il dit comment s'en servir.</em></p>
+<aside class="encart encart-abstract"><p class="encart-titre">Sommaire</p><p><strong><a class="lien-interne" href="#i-mener-bas-gue">I. Mener Bas-Gué</a></strong><br>
+<a class="lien-interne" href="#la-forme-d-une-seance">La forme d'une séance</a> · <a class="lien-interne" href="#cinq-consignes">Cinq consignes</a> · <a class="lien-interne" href="#ce-qui-se-subit-et-ce-qui-se-construit">Ce qui se subit et ce qui se construit</a></p>
+<p><strong><a class="lien-interne" href="#ii-la-seance-zero">II. La séance zéro</a></strong><br>
+<a class="lien-interne" href="#le-test-de-la-porte">Le test de la porte</a> · <a class="lien-interne" href="#l-espece-ne-determine-pas-la-position">L'espèce ne détermine pas la Position</a> · <a class="lien-interne" href="#ce-qu-on-ne-joue-pas">Ce qu'on ne joue pas</a> · <a class="lien-interne" href="#ce-qu-on-annonce-a-voix-haute">Ce qu'on annonce à voix haute</a> · <a class="lien-interne" href="#les-trois-questions-collectives">Les trois questions collectives</a> · <a class="lien-interne" href="#s-arreter">S'arrêter</a> · <a class="lien-interne" href="#ta-check-list">Ta check-list</a></p>
+<p><strong><a class="lien-interne" href="#iii-le-monde-en-pratique">III. Le monde en pratique</a></strong><br>
+<a class="lien-interne" href="#compter-le-fleuve">La carte et les distances</a> · <a class="lien-interne" href="#les-six-lieux">Les six lieux</a> · <a class="lien-interne" href="#les-dix-habitues">Les dix habitués</a> · <a class="lien-interne" href="#improviser-un-habitue">Improviser un habitué</a></p>
+<p><strong><a class="lien-interne" href="#iv-preparer-une-enquete">IV. Préparer une enquête</a></strong><br>
+<a class="lien-interne" href="#d-ou-vient-une-enquete">D'où vient une enquête</a> · <a class="lien-interne" href="#quatre-lignes">Quatre lignes</a> · <a class="lien-interne" href="#conduire-les-portes">Conduire les portes</a> · <a class="lien-interne" href="#tenir-la-rumeur">Tenir la rumeur</a> · <a class="lien-interne" href="#improviser-une-enquete-en-trente-secondes">Improviser une enquête en trente secondes</a></p>
+<p><strong><a class="lien-interne" href="#v-l-opposition">V. L'opposition</a></strong><br>
+<a class="lien-interne" href="#quand-et-combien">Quand et combien</a> · <a class="lien-interne" href="#le-format">Le format</a> · <a class="lien-interne" href="#les-trois-gabarits">Les trois gabarits</a> · <a class="lien-interne" href="#doser-une-rencontre">Doser une rencontre</a> · <a class="lien-interne" href="#huit-adversaires">Huit adversaires</a> · <a class="lien-interne" href="#improviser-un-adversaire-en-trente-secondes">Improviser un adversaire en trente secondes</a></p>
+<p><strong><a class="lien-interne" href="#vi-la-boucle-de-campagne">VI. La boucle de campagne</a></strong><br>
+<a class="lien-interne" href="#la-premiere-aventure">La première aventure</a> · <a class="lien-interne" href="#les-aventures-suivantes">Les aventures suivantes</a> · <a class="lien-interne" href="#ce-que-chaque-bord-attire">Ce que chaque bord attire</a> · <a class="lien-interne" href="#le-genre-de-la-campagne">Le genre de la campagne</a></p>
+<p><strong><a class="lien-interne" href="#vii-improviser">VII. Improviser</a></strong> — <a class="lien-interne" href="#un-trait">un trait</a> · <a class="lien-interne" href="#un-objet">un objet</a> · <a class="lien-interne" href="#une-option-nouvelle">une option nouvelle</a></p>
+<p><strong><a class="lien-interne" href="#viii-aide-memoire-du-meneur">VIII. Aide-mémoire du meneur</a></strong> — <em>gabarits, enquête, rumeur, Inclinaison</em></p></aside>
+<aside class="encart encart-tip"><p class="encart-titre">À côté de ce manuel</p><p><span class="lien-futur" title="Document à venir">Bas-Gué - Scénario - La commande</span> — le premier scénario, prêt à jouer<br>
+<span class="lien-futur" title="Document à venir">Bas-Gué - Pré-tirés</span> — cinq personnages finis, l'équipage de la <em>Marne</em><br>
+<span class="lien-futur" title="Document à venir">Bas-Gué - Notes d'arbitrage</span> — pourquoi chaque règle est ce qu'elle est</p></aside>
+<hr class="separateur">
+<h1 id="i-mener-bas-gue" class="titre-n1 titre-chiffre"><a class="ancre" href="#i-mener-bas-gue" aria-label="Lien vers cette section">§</a><span class="chiffre">I</span><span class="intitule">Mener Bas-Gué</span></h1>
+<h2 id="la-forme-d-une-seance" class="titre-n2"><a class="ancre" href="#la-forme-d-une-seance" aria-label="Lien vers cette section">§</a><span class="intitule">La forme d'une séance</span></h2>
+<p>Une aventure de Bas-Gué suit toujours le même arc. Connais-le, et tu improvises tout le reste.</p>
+<div class="table-enveloppe"><table>
+<thead><tr><th></th><th>Ce qui se passe</th><th>Toi, tu…</th></tr></thead>
+<tbody>
+<tr><td><strong>1</strong></td><td><strong>On ouvre à quai.</strong> Le groupe est sur la Gousse, entre deux aventures.</td><td>…annonces qui attend sur le ponton.</td></tr>
+<tr><td><strong>2</strong></td><td><strong>Le crochet arrive.</strong> Quelqu'un frappe à la coque, avec une demande ou une accusation.</td><td>…le tires de <a class="lien-interne" href="#les-aventures-suivantes">la coque</a>, jamais du hasard.</td></tr>
+<tr><td><strong>3</strong></td><td><strong>L'enquête.</strong> Trois lieux, trois portes chacun. <a class="lien-interne" href="#tenir-la-rumeur">La rumeur</a> monte.</td><td>…dis ce que chaque porte coûte ici, maintenant.</td></tr>
+<tr><td><strong>4</strong></td><td><strong>La rumeur atteint 3.</strong> L'adversaire sort de l'ombre et frappe le premier.</td><td>…le transformes en <a class="lien-interne" href="#v-l-opposition">adversaire en quatre lignes</a>.</td></tr>
+<tr><td><strong>5</strong></td><td><strong>La confrontation.</strong> Combat, tribunal, ou négociation — selon ce que le groupe a préparé.</td><td>…rappelles <strong>ce qu'il veut</strong> avant le premier jet.</td></tr>
+<tr><td><strong>6</strong></td><td><strong>Le dénouement.</strong> Le groupe choisit ce qu'il fait de ce qu'il sait.</td><td>…laisses débattre. C'est la meilleure scène.</td></tr>
+<tr><td><strong>7</strong></td><td><strong>Retour à quai.</strong> Greffon gagné, <a class="lien-interne" href="#ce-que-chaque-bord-attire">Inclinaison relue</a>, quelqu'un attend déjà.</td><td>…ouvres la prochaine aventure sans le dire.</td></tr>
+</tbody></table></div>
+<p><strong>Compte trois heures à trois joueurs, quatre à cinq.</strong> L'étape 6 est celle qui varie le plus.</p>
+<h2 id="cinq-consignes" class="titre-n2"><a class="ancre" href="#cinq-consignes" aria-label="Lien vers cette section">§</a><span class="intitule">Cinq consignes</span></h2>
+<p><strong>1. Ne lance que si l'échec change quelque chose.</strong> Sinon, dis oui.</p>
+<p><strong>2. Sur une réussite courte, dis immédiatement ce qui tourne mal.</strong> Ne diffère pas, ne note pas pour plus tard. La réussite courte produit les dettes, les témoins, les traces et les traits : c'est elle qui fabrique les aventures suivantes.</p>
+<p><strong>3. Le préjugé est une porte, pas une insulte.</strong> Un garde redemande ses papiers pour la quatorzième fois sans malice, parce que c'est la procédure. Aucune Position ne contient d'insulte : elles contiennent des accès, des fermetures chiffrées et des obligations. Joue les portes.</p>
+<p><strong>4. La violence doit être la mauvaise option.</strong> Chaque adversaire a une ligne <em>ce qu'il veut</em>. Rappelle-la à voix haute, une fois, avant le premier jet.</p>
+<p><strong>5. Les trois portes d'une enquête fonctionnent toujours.</strong> Ne décide jamais à l'avance par laquelle un fait s'obtient. Ton travail est de dire ce que chacune coûte ici, maintenant.</p>
+<h2 id="ce-qui-se-subit-et-ce-qui-se-construit" class="titre-n2"><a class="ancre" href="#ce-qui-se-subit-et-ce-qui-se-construit" aria-label="Lien vers cette section">§</a><span class="intitule">Ce qui se subit et ce qui se construit</span></h2>
+<div class="table-enveloppe"><table>
+<thead><tr><th>Se subit</th><th>Se construit</th></tr></thead>
+<tbody>
+<tr><td>Les traits — ils arrivent en jouant</td><td>Les greffes — le joueur les choisit</td></tr>
+<tr><td>Les marques — elles arrivent quand on reste à terre</td><td>Les greffons de la Gousse — le groupe les choisit</td></tr>
+<tr><td>L'Inclinaison — elle suit les actes publics</td><td>Les dettes tenues — elles s'accumulent volontairement</td></tr>
+</tbody></table></div>
+<p>La Gousse est le seul endroit du jeu où le groupe décide entièrement. Traite-la comme telle : à quai, rien ne tombe dessus sans qu'on l'ait voulu.</p>
+<hr class="separateur">
+<h1 id="ii-la-seance-zero" class="titre-n1 titre-chiffre"><a class="ancre" href="#ii-la-seance-zero" aria-label="Lien vers cette section">§</a><span class="chiffre">II</span><span class="intitule">La séance zéro</span></h1>
+<p><strong>Une demi-heure, avant la toute première partie.</strong> Elle se tient avant que quiconque ait touché une fiche.</p>
+<p>Elle produit trois choses : une table qui sait <strong>comment on joue les Positions</strong>, une table qui sait <strong>ce qui peut arriver à son personnage</strong>, et <strong>ton premier crochet d'aventure</strong>.</p>
+<h2 id="le-test-de-la-porte" class="titre-n2"><a class="ancre" href="#le-test-de-la-porte" aria-label="Lien vers cette section">§</a><span class="intitule">Le test de la porte</span></h2>
+<p>Avant de jouer une scène de préjugé, demande-toi : <strong>quelle porte se ferme, et qui la ferme sans même y penser ?</strong></p>
+<p>Si la réponse est <em>« personne, c'est juste quelqu'un de désagréable »</em>, tu joues autre chose.</p>
+<h2 id="l-espece-ne-determine-pas-la-position" class="titre-n2"><a class="ancre" href="#l-espece-ne-determine-pas-la-position" aria-label="Lien vers cette section">§</a><span class="intitule">L'espèce ne détermine pas la Position</span></h2>
+<p>Les listes d'espèces sont indicatives, jamais prescriptives.</p>
+<ul><li>Un rat qui a fait fortune est une <strong>Haute Maison</strong>.</li><li>Un renard qui hale des péniches est un <strong>Bras</strong>.</li><li>Une chouette née en amont, sans nom en ville, est une <strong>Étrangère</strong>.</li></ul>
+<p><strong>Fais en sorte qu'au moins un personnage de la table ait une espèce et une Position qui ne vont pas ensemble.</strong> Une fois que c'est arrivé une fois, le pli est pris pour toute la campagne.</p>
+<h2 id="ce-qu-on-ne-joue-pas" class="titre-n2"><a class="ancre" href="#ce-qu-on-ne-joue-pas" aria-label="Lien vers cette section">§</a><span class="intitule">Ce qu'on ne joue pas</span></h2>
+<ul><li><strong>Pas d'accent, pas de voix</strong> — rien qui transforme un peuple en imitation.</li><li><strong>Le préjugé vient du monde, pas des joueureuses.</strong> On ne se sert pas de sa Position pour rabaisser le personnage d'un autre. Si la fiction l'exige, on le dit avant la scène.</li><li><strong>Aucune espèce n'est mauvaise.</strong> Il n'y a pas de peuple traître, violent ou voleur. Il y a des positions sociales qui produisent des comportements.</li><li><strong>Les préjugés ne sont pas la vanne récurrente de la campagne.</strong></li></ul>
+<h2 id="ce-qu-on-annonce-a-voix-haute" class="titre-n2"><a class="ancre" href="#ce-qu-on-annonce-a-voix-haute" aria-label="Lien vers cette section">§</a><span class="intitule">Ce qu'on annonce à voix haute</span></h2>
+<div class="table-enveloppe"><table>
+<thead><tr><th>Annonce</th><th>Contenu</th></tr></thead>
+<tbody>
+<tr><td><strong>Les Positions sont vraies pour tout le monde</strong></td><td>Personnages non joueurs compris. Si les Gens de terriers n'entrent pas dans les hauts quartiers, ça vaut aussi pour le rat le plus riche de la ville.</td></tr>
+<tr><td><strong>Les marques sont définitives</strong></td><td>Aucun soin ne les efface. Trois marques, et le personnage se retire — mais il reste à la Gousse.</td></tr>
+<tr><td><strong>On tombe en trois coups</strong></td><td>Les adversaires frappent en d6/d8, les personnages ont 8 à 16 points de vie.</td></tr>
+<tr><td><strong>Tomber ne laisse pas de cicatrice — être laissé à terre, si</strong></td><td>Le jeu récompense de se porter secours.</td></tr>
+<tr><td><strong>La violence est presque toujours la mauvaise option</strong></td><td>Chaque adversaire a quelque chose qu'il accepterait à la place.</td></tr>
+<tr><td><strong>Les traits ne se choisissent pas</strong></td><td>Personne ne construit son personnage trois séances à l'avance.</td></tr>
+</tbody></table></div>
+<h2 id="les-trois-questions-collectives" class="titre-n2"><a class="ancre" href="#les-trois-questions-collectives" aria-label="Lien vers cette section">§</a><span class="intitule">Les trois questions collectives</span></h2>
+<p><strong>1. D'où vient la Gousse ?</strong> Héritée · Saisie · Bouturée · Trouvée. <em>(Voir</em> La boucle de campagne.<em>)</em></p>
+<p><strong>2. Pourquoi chacun est à bord ?</strong> Une phrase par personnage, impliquant un autre personnage de la table.</p>
+<p><strong>3. On commence par quoi — l'amont ou la ville ?</strong> Le tableau des greffons est un menu de genre.</p>
+<h2 id="s-arreter" class="titre-n2"><a class="ancre" href="#s-arreter" aria-label="Lien vers cette section">§</a><span class="intitule">S'arrêter</span></h2>
+<p>Convenez d'un mot ou d'un geste que tout le monde connaît. Il ne demande pas de justification et ne coupe pas la scène : <strong>on recule de trente secondes, on joue autrement, on continue.</strong></p>
+<h2 id="ta-check-list" class="titre-n2"><a class="ancre" href="#ta-check-list" aria-label="Lien vers cette section">§</a><span class="intitule">Ta check-list</span></h2>
+<ul><li>[ ] Chacun a nommé <strong>une porte que sa Position lui ferme</strong> ?</li><li>[ ] <strong>Au moins un personnage</strong> a une espèce et une Position qui ne vont pas ensemble ?</li><li>[ ] Chaque <em>« pourquoi je suis à bord »</em> implique quelqu'un d'autre ?</li><li>[ ] La table sait que les marques sont définitives, et comment on les évite ?</li><li>[ ] Tu as ton premier crochet — <strong>l'origine de la Gousse</strong> ?</li></ul>
+<hr class="separateur">
+<h1 id="iii-le-monde-en-pratique" class="titre-n1 titre-chiffre"><a class="ancre" href="#iii-le-monde-en-pratique" aria-label="Lien vers cette section">§</a><span class="chiffre">III</span><span class="intitule">Le monde en pratique</span></h1>
+<h2 id="compter-le-fleuve" class="titre-n2"><a class="ancre" href="#compter-le-fleuve" aria-label="Lien vers cette section">§</a><span class="intitule">Compter le fleuve</span></h2>
+<p>Tout se mesure en <strong>jours de fleuve</strong>.</p>
+<div class="table-enveloppe"><table>
+<thead><tr><th>Trajet</th><th>En remontant</th><th>En descendant</th></tr></thead>
+<tbody>
+<tr><td>Vasque → Bas-Gué</td><td>2 jours</td><td>1 jour</td></tr>
+<tr><td>Bas-Gué → le bac haut</td><td>½ jour</td><td>quelques heures</td></tr>
+<tr><td>Le bac haut → Hauteroche</td><td>1 jour</td><td>½ jour</td></tr>
+<tr><td>Hauteroche → les Vergers hauts</td><td>1 jour</td><td>½ jour</td></tr>
+</tbody></table></div>
+<p><strong>Descendre coûte la moitié de remonter.</strong> À pied, hors du fleuve : le double, et on dort dehors.</p>
+<p><em>Vasque → Hauteroche : environ trois jours et demi de remontée.</em></p>
+<p><strong>Une journée de fleuve</strong> — l'unité que cite le trait <em>Attaché à la coque</em> — couvre ce qui va de Vasque au bac haut.</p>
+<p><figure class="carte">
+<svg viewBox="0 0 760 330" role="img" aria-labelledby="carte-titre carte-desc" class="carte-svg">
+  <title id="carte-titre">Le fleuve, de l'amont à Vasque</title>
+  <desc id="carte-desc">Les Vergers hauts, Hauteroche, le bac haut, Bas-Gué et Vasque, alignés sur le fleuve. Chaque tronçon est chiffré en jours de remontée.</desc>
+
+  <!-- eau -->
+  <path class="eau-large" d="M12,88 C120,72 180,126 268,132 C356,138 400,96 486,110 C572,124 610,196 700,214 L748,222"/>
+  <path class="eau-fine" d="M12,104 C120,90 186,142 270,148 C354,154 398,112 484,126 C570,140 606,212 698,230 L748,238"/>
+  <path class="eau-fine" d="M14,74 C122,58 176,110 266,116 C356,122 402,80 488,94 C574,108 614,180 702,198 L748,206"/>
+
+  <!-- roseaux -->
+  <g class="roseau">
+    <path d="M96,150 q6,-22 2,-38"/><path d="M104,152 q10,-18 12,-30"/>
+    <path d="M330,118 q4,-20 0,-34"/><path d="M340,120 q9,-16 12,-26"/>
+    <path d="M620,236 q5,-22 1,-36"/><path d="M630,238 q10,-18 13,-28"/>
+  </g>
+
+  <!-- points -->
+  <g class="lieu">
+    <circle class="pastille" cx="40" cy="86" r="7"/>
+    <text class="nom" x="40" y="62">Les Vergers hauts</text>
+    <text class="tag" x="40" y="46">amont</text>
+  </g>
+  <g class="lieu">
+    <circle class="pastille" cx="200" cy="112" r="7"/>
+    <text class="nom" x="200" y="182">Hauteroche</text>
+    <text class="tag" x="200" y="198">le moulin</text>
+  </g>
+  <g class="lieu">
+    <circle class="pastille" cx="372" cy="128" r="7"/>
+    <text class="nom" x="372" y="102">Le bac haut</text>
+    <text class="tag" x="372" y="86">Bourdaine, passeur</text>
+  </g>
+  <g class="lieu lieu-cite">
+    <circle class="pastille pastille-forte" cx="540" cy="140" r="11"/>
+    <text class="nom nom-fort" x="540" y="206">Bas-Gué</text>
+    <text class="tag" x="540" y="222">le gué, le tribunal, la Gousse</text>
+  </g>
+  <g class="lieu">
+    <circle class="pastille" cx="712" cy="222" r="7"/>
+    <text class="nom" x="700" y="286">Vasque</text>
+    <text class="tag" x="700" y="302">aval · les guildes</text>
+  </g>
+
+  <!-- distances : remontée -->
+  <g class="mesure">
+    <text x="118" y="126">1 j</text>
+    <text x="286" y="140">1 j</text>
+    <text x="456" y="152">½ j</text>
+    <text x="628" y="204">2 j</text>
+  </g>
+
+  <!-- sens du courant -->
+  <g class="courant">
+    <path d="M560,44 L648,44"/>
+    <path d="M648,44 l-9,-5 l0,10 z" class="pointe"/>
+    <text x="604" y="32">le courant descend</text>
+    <text x="604" y="62">remonter coûte le double</text>
+  </g>
+</svg>
+<figcaption>Tout se compte en <strong>jours de fleuve</strong>. Les chiffres portés sont ceux de la <em>remontée</em> ; descendre coûte la moitié.</figcaption>
+</figure>
+</p>
+<h2 id="les-six-lieux" class="titre-n2"><a class="ancre" href="#les-six-lieux" aria-label="Lien vers cette section">§</a><span class="intitule">Les six lieux</span></h2>
+<h3 id="le-port-et-les-quais" class="titre-n3"><a class="ancre" href="#le-port-et-les-quais" aria-label="Lien vers cette section">§</a><span class="intitule">Le port et les quais</span></h3>
+<p>Des pontons vivants qui s'épaississent seuls et qu'on retaille au printemps. Des lampes-lichens nourries chaque matin. <strong>Personne n'y a de quartier</strong> : c'est le seul endroit de la ville où une Haute Maison et des Gens de terriers se croisent sans que ça se remarque.<br>
+<strong>On y —</strong> décharge, recrute, attend quelqu'un.<br>
+<strong>On y risque —</strong> d'être vu. Les quais parlent : <strong>la rumeur y monte plus vite qu'ailleurs</strong>.</p>
+<h3 id="le-tribunal-dans-l-arbre" class="titre-n3"><a class="ancre" href="#le-tribunal-dans-l-arbre" aria-label="Lien vers cette section">§</a><span class="intitule">Le tribunal dans l'arbre</span></h3>
+<p>Un érable de soixante pas, creusé et vivant. Les salles montent en spirale ; <strong>plus l'affaire est grave, plus on monte</strong>. Les registres sont sur écorce, dans les racines, au frais. On n'en sort rien sans un greffier.<br>
+<strong>On y —</strong> prouve. C'est le seul endroit où un fait devient opposable.<br>
+<strong>On y risque —</strong> que ça marche dans les deux sens. Un <em>Pacte</em> protège autant qu'il tient.</p>
+<h3 id="les-entrepots" class="titre-n3"><a class="ancre" href="#les-entrepots" aria-label="Lien vers cette section">§</a><span class="intitule">Les entrepôts</span></h3>
+<p>Des racines creuses de la taille d'une grange, qui respirent et gardent le frais.<br>
+<strong>On y —</strong> stocke, échange, cherche un bordereau.<br>
+<strong>On y risque —</strong> la fouille. <strong>Tout ce qui entre est fouillé</strong>, pour tout le monde. On ne fait pas passer un secret par les entrepôts.</p>
+<h3 id="les-hauts-quartiers" class="titre-n3"><a class="ancre" href="#les-hauts-quartiers" aria-label="Lien vers cette section">§</a><span class="intitule">Les hauts quartiers</span></h3>
+<p>Bâtis sur les racines aériennes, au-dessus des crues. Trois escaliers, et quelqu'un au pied de chacun.<br>
+<strong>On y —</strong> obtient du crédit, est reçu, apprend ce que Vasque prépare.<br>
+<strong>On y risque —</strong> le laissez-passer, demandé à chaque fois aux Gens de terriers et aux Nocturnes.</p>
+<h3 id="vasque-en-aval" class="titre-n3"><a class="ancre" href="#vasque-en-aval" aria-label="Lien vers cette section">§</a><span class="intitule">Vasque — en aval</span></h3>
+<p>Guildes, fortunes, registres partout. Une Gousse <strong>Greffé</strong> y est reçue ; une Gousse <strong>Sauvage</strong> n'y traite avec personne.<br>
+<strong>On y risque —</strong> que <strong>la dette s'y écrive et s'y vende</strong>. Une créance contractée envers un meunier peut arriver entre les mains d'une guilde, et le groupe ne l'apprendra qu'au moment où on l'appellera.</p>
+<h3 id="l-amont-les-villages" class="titre-n3"><a class="ancre" href="#l-amont-les-villages" aria-label="Lien vers cette section">§</a><span class="intitule">L'amont — les villages</span></h3>
+<p>Hauteroche et son moulin, les Vergers hauts, le bac de Bourdaine.<br>
+<strong>On y trouve —</strong> l'hospitalité, si on la mérite. <strong>La dette s'y parle</strong>, elle ne s'écrit pas : un village peut la porter deux générations.<br>
+<strong>On y risque —</strong> rien si la Gousse tient le Gué. Une Gousse <strong>Greffé</strong> n'y est hébergée nulle part.</p>
+<h2 id="les-dix-habitues" class="titre-n2"><a class="ancre" href="#les-dix-habitues" aria-label="Lien vers cette section">§</a><span class="intitule">Les dix habitués</span></h2>
+<p><em>Chacun est écrit au format d'une recrue : une fonction, une opinion, une Inclinaison, et ce qu'il veut. Utilisables comme contacts, comme recrues, ou comme ennuis.</em></p>
+<h3 id="sur-les-quais" class="titre-n3"><a class="ancre" href="#sur-les-quais" aria-label="Lien vers cette section">§</a><span class="intitule">Sur les quais</span></h3>
+<p><strong>Poix</strong> — rat · Gens de terriers · au Gué · <em>docker</em><br>
+<strong>Fait —</strong> il décharge, porte un mot, sait qui était sur quel quai avant-hier.<br>
+<strong>Pense —</strong> que vous allez le laisser tomber, parce que tout le monde le fait. Il ne le dit pas.<br>
+<strong>Veut —</strong> une couchette. Pas un salaire : une couchette. Il dort sous les pontons depuis deux hivers.</p>
+<blockquote class="note"><p><em>La recrue par défaut. Si le groupe hésite à en prendre une, mets Poix sur le quai et attends.</em></p></blockquote>
+<p><strong>Ortie</strong> — chauve-souris · Nocturne · Greffé +1 · <em>officine de nuit</em><br>
+<strong>Fait —</strong> elle prépare des doses, soigne ce qui ne peut pas aller au grand jour.<br>
+<strong>Pense —</strong> que l'amont est superstitieux et que ça coûte des vies. Elle le dira à table.<br>
+<strong>Veut —</strong> une <strong>Serre</strong>. Elle travaille sous un escalier ; vous avez un bateau.</p>
+<h3 id="au-tribunal" class="titre-n3"><a class="ancre" href="#au-tribunal" aria-label="Lien vers cette section">§</a><span class="intitule">Au tribunal</span></h3>
+<p><strong>Sagne</strong> — pie · Parole reconnue · au Gué · <em>greffier</em><br>
+<strong>Fait —</strong> il retrouve un acte, fait avancer une requête, dit <strong>quelle semaine manque</strong> dans un registre.<br>
+<strong>Pense —</strong> que la vérité est une question de classement, et que les gens pressés font des erreurs.<br>
+<strong>Veut —</strong> des dettes. Il n'en appelle presque jamais ; il les accumule.</p>
+<blockquote class="note"><p><em>Le meilleur contact du jeu, et le plus dangereux : il rend service <strong>facilement</strong>.</em></p></blockquote>
+<p><strong>Dame Verne</strong> — héronne · Parole reconnue · au Gué · <em>juge, troisième niveau</em><br>
+<strong>Fait —</strong> rien. On ne recrute pas Dame Verne. Mais elle écoute, et une audience obtenue est une aventure gagnée.<br>
+<strong>Pense —</strong> que ni l'amont ni Vasque n'ont raison, et que c'est son travail de tenir ça.<br>
+<strong>Veut —</strong> que Bas-Gué reste un endroit où les deux bords viennent encore. Elle sacrifiera n'importe qui pour ça, <strong>y compris les personnages</strong>.</p>
+<h3 id="aux-entrepots" class="titre-n3"><a class="ancre" href="#aux-entrepots" aria-label="Lien vers cette section">§</a><span class="intitule">Aux entrepôts</span></h3>
+<p><strong>Trogne</strong> — sanglier · Les Bras · au Gué · <em>maître des entrepôts</em><br>
+<strong>Fait —</strong> il fait passer une caisse en premier, ou en dernier. Jamais disparaître.<br>
+<strong>Pense —</strong> que les guildes le prennent pour un portier. Elles ont raison, et il le sait.<br>
+<strong>Veut —</strong> qu'on lui demande son avis sur autre chose que des caisses. Une fois. Sincèrement.</p>
+<h3 id="dans-les-hauts-quartiers" class="titre-n3"><a class="ancre" href="#dans-les-hauts-quartiers" aria-label="Lien vers cette section">§</a><span class="intitule">Dans les hauts quartiers</span></h3>
+<p><strong>Coise</strong> — hermine · Hautes Maisons · Greffé +2 · <em>place de l'argent dans ce qui pousse</em><br>
+<strong>Fait —</strong> elle ouvre une porte, avance une denrée, fait inviter quelque part.<br>
+<strong>Pense —</strong> que l'Inclinaison est une affaire de paysans et que tout finit par s'acheter.<br>
+<strong>Veut —</strong> une créance sur vous, <strong>écrite</strong>. Pas votre argent : votre nom sur une écorce.</p>
+<h3 id="a-vasque" class="titre-n3"><a class="ancre" href="#a-vasque" aria-label="Lien vers cette section">§</a><span class="intitule">À Vasque</span></h3>
+<p><strong>Aubier</strong> — belette · Parole reconnue · Greffé +2 · <em>courtier en créances</em><br>
+<strong>Fait —</strong> il rachète une dette qui vous pèse. Sur-le-champ, sans discuter le prix.<br>
+<strong>Pense —</strong> qu'une parole donnée est un objet, et qu'un objet a un cours.<br>
+<strong>Veut —</strong> être cru sur parole partout, comme on l'est à Vasque. En amont on lui rit au nez, et c'est la seule chose qui le blesse.</p>
+<blockquote class="note"><p><em>Sa fonction de recrue est un piège poli : il vous débarrasse d'un créancier, et c'est <strong>lui</strong> qui vous tient.</em></p></blockquote>
+<p><strong>Garance</strong> — taupe · Gens de terriers · Greffé +3 · <em>maîtresse-greffeuse de la guilde des Teintures</em><br>
+<strong>Fait —</strong> elle greffe ce que personne d'autre ne sait greffer, et <strong>identifie une greffe au premier coup d'œil</strong> : qui, quand, avec quoi.<br>
+<strong>Pense —</strong> que l'amont laisse mourir des gens par superstition, et que les guildes la font travailler dans une cave. Elle a raison deux fois.<br>
+<strong>Veut —</strong> son nom sur un registre. On le lui refuse depuis quinze ans.</p>
+<h3 id="en-amont" class="titre-n3"><a class="ancre" href="#en-amont" aria-label="Lien vers cette section">§</a><span class="intitule">En amont</span></h3>
+<p><strong>Bourdaine</strong> — loutre · Lignée fluviale · Sauvage −1 · <em>passeur du bac haut</em><br>
+<strong>Fait —</strong> il fait traverser, se souvient de qui est passé, cache une nuit.<br>
+<strong>Pense —</strong> qu'il a laissé passer une chose qu'il n'aurait pas dû, il y a deux mois, et que ça finira par se savoir.<br>
+<strong>Veut —</strong> être sorti de tout ça. Il le dira mal, et on croira qu'il ment.</p>
+<p><strong>Bardane</strong> — blaireau · Gens de terriers · Sauvage −2 · <em>des Vergers hauts</em><br>
+<strong>Fait —</strong> elle fait héberger n'importe où en amont, même une Gousse Greffé.<br>
+<strong>Pense —</strong> que greffer un vivant qui n'a rien demandé est le seul vrai crime, et que le tribunal joue avec les mots.<br>
+<strong>Veut —</strong> que les personnages choisissent un bord. Elle le demandera clairement, une seule fois.</p>
+<h2 id="improviser-un-habitue" class="titre-n2"><a class="ancre" href="#improviser-un-habitue" aria-label="Lien vers cette section">§</a><span class="intitule">Improviser un habitué</span></h2>
+<ol><li><strong>Un métier, pas une espèce.</strong></li><li><strong>Une Position et une Inclinaison.</strong></li><li><strong>Une chose qu'il fait</strong>, hors scène, une fois par aventure.</li><li><strong>Une chose qu'il veut</strong>, qui n'est pas de l'argent — il n'y en a pas ici.</li></ol>
+<blockquote class="note"><p><strong>Test —</strong> <em>est-ce que ce personnage peut refuser ?</em> S'il ne peut pas, ce n'est pas un habitué, c'est un distributeur.</p></blockquote>
+<hr class="separateur">
+<h1 id="iv-preparer-une-enquete" class="titre-n1 titre-chiffre"><a class="ancre" href="#iv-preparer-une-enquete" aria-label="Lien vers cette section">§</a><span class="chiffre">IV</span><span class="intitule">Préparer une enquête</span></h1>
+<h2 id="d-ou-vient-une-enquete" class="titre-n2"><a class="ancre" href="#d-ou-vient-une-enquete" aria-label="Lien vers cette section">§</a><span class="intitule">D'où vient une enquête</span></h2>
+<p><strong>Tu ne l'inventes pas. Tu la lis sur la coque.</strong></p>
+<p>Entre deux aventures, regarde la Gousse : elle porte des <a class="lien-interne" href="#les-aventures-suivantes">greffons</a>, chacun avec une ligne <em>ce que ça attire</em>, plus une <a class="lien-interne" href="#ce-que-chaque-bord-attire">Inclinaison</a> qui dit quel bord s'intéresse au groupe. <strong>Prends un crochet, ou croises-en deux</strong> — tu as ton sujet et ton adversaire.</p>
+<p><em>Pour la toute première aventure, la coque est vide : le crochet vient de <a class="lien-interne" href="#la-premiere-aventure">l'origine de la Gousse</a>.</em></p>
+<p>Compte <strong>quinze minutes</strong> de préparation. Tu écris quatre lignes, pas un scénario.</p>
+<h2 id="quatre-lignes" class="titre-n2"><a class="ancre" href="#quatre-lignes" aria-label="Lien vers cette section">§</a><span class="intitule">Quatre lignes</span></h2>
+<div class="table-enveloppe"><table>
+<thead><tr><th>Ligne</th><th>Contenu</th></tr></thead>
+<tbody>
+<tr><td><strong>Ce qui s'est passé</strong></td><td>La vérité, en une phrase. Elle ne sera jamais montrée telle quelle.</td></tr>
+<tr><td><strong>Ce qu'on voit</strong></td><td>L'apparence, en une phrase. Ce que toute la ville croit.</td></tr>
+<tr><td><strong>Trois lieux</strong></td><td>Là où la vérité fuit. <strong>Un fait par lieu.</strong></td></tr>
+<tr><td><strong>Qui perd si ça se sait</strong></td><td>L'adversaire, et ce qu'il fera pour l'empêcher.</td></tr>
+</tbody></table></div>
+<p><strong>Trois lieux, pas cinq.</strong> C'est ce qui tient dans une séance.</p>
+<blockquote class="note"><p><strong>Test —</strong> <em>mes trois faits peuvent-ils s'obtenir dans n'importe quel ordre ?</em><br>
+Si non, tu as écrit une chaîne, pas une enquête, et elle cassera au premier maillon.</p></blockquote>
+<h2 id="conduire-les-portes" class="titre-n2"><a class="ancre" href="#conduire-les-portes" aria-label="Lien vers cette section">§</a><span class="intitule">Conduire les portes</span></h2>
+<p>Pour chaque lieu, prépare <strong>le fait</strong>, pas le chemin. Quand les joueureuses agissent, annonce ce que la porte coûte <strong>ici, maintenant</strong> :</p>
+<ul><li><strong>La parole —</strong> qui sait, et ce que cette personne veut en échange.</li><li><strong>La trace —</strong> ce qui est resté, et qui le verra fouiller.</li><li><strong>Le registre —</strong> où c'est écrit, et à qui ça appartient.</li></ul>
+<p>Une porte peut être coûteuse. <strong>Aucune n'est fermée.</strong></p>
+<h2 id="tenir-la-rumeur" class="titre-n2"><a class="ancre" href="#tenir-la-rumeur" aria-label="Lien vers cette section">§</a><span class="intitule">Tenir la rumeur</span></h2>
+<p>Compte-la à voix haute. Les joueureuses doivent la voir monter.</p>
+<p><strong>Fais-la monter sur :</strong> une réussite courte · un manqué · une action publique · un Outrepasser.</p>
+<p><strong>« Action publique » inclut : invoquer une Position.</strong> C'est le point que les tables oublient, et c'est celui qui fait tourner l'horloge. L'accès d'une Position est gratuit en dette et cher en rumeur.</p>
+<p><strong>Au cran 3, l'adversaire agit.</strong> Ce n'est pas une défaite : c'est le milieu de l'histoire. Il sort de l'ombre et devient un adversaire en quatre lignes.</p>
+<blockquote class="note"><p>Si la table atteint le cran 3 sans avoir rien trouvé, tu as caché les faits trop loin.</p></blockquote>
+<h2 id="improviser-une-enquete-en-trente-secondes" class="titre-n2"><a class="ancre" href="#improviser-une-enquete-en-trente-secondes" aria-label="Lien vers cette section">§</a><span class="intitule">Improviser une enquête en trente secondes</span></h2>
+<ol><li><strong>Prends un crochet de la coque.</strong> Il donne l'adversaire et le sujet.</li><li><strong>Écris la vérité en une phrase</strong>, puis le mensonge qui la couvre.</li><li><strong>Trouve trois lieux où la vérité fuit</strong> — un par porte si tu peux.</li><li><strong>Demande-toi qui perd si ça se sait.</strong> C'est ton adversaire.</li></ol>
+<hr class="separateur">
+<h1 id="v-l-opposition" class="titre-n1 titre-chiffre"><a class="ancre" href="#v-l-opposition" aria-label="Lien vers cette section">§</a><span class="chiffre">V</span><span class="intitule">L'opposition</span></h1>
+<h2 id="quand-et-combien" class="titre-n2"><a class="ancre" href="#quand-et-combien" aria-label="Lien vers cette section">§</a><span class="intitule">Quand et combien</span></h2>
+<p><strong>Tu n'écris aucun adversaire à l'avance</strong>, sauf un : celui de la ligne <em>qui perd si ça se sait</em>. Les autres arrivent en cours de scène, et tu les <a class="lien-interne" href="#improviser-un-adversaire-en-trente-secondes">improvises en trente secondes</a>.</p>
+<p>Par aventure, compte :</p>
+<ul><li><strong>un Sérieux ou un Redoutable</strong> — l'adversaire de l'enquête, jamais plus d'un ;</li><li><strong>des Comparses selon les besoins</strong> — <a class="lien-interne" href="#doser-une-rencontre">un par personnage</a> à chaque affrontement ;</li><li><strong>zéro à deux affrontements</strong>. Bas-Gué n'est pas un jeu de combat : une aventure peut n'en contenir aucun.</li></ul>
+<h2 id="le-format" class="titre-n2"><a class="ancre" href="#le-format" aria-label="Lien vers cette section">§</a><span class="intitule">Le format</span></h2>
+<div class="table-enveloppe"><table>
+<thead><tr><th>Ligne</th><th>Contenu</th></tr></thead>
+<tbody>
+<tr><td><strong>Les chiffres</strong></td><td>Défense · points de vie · dégâts</td></tr>
+<tr><td><strong>Fait</strong></td><td>Son geste signature. Un seul.</td></tr>
+<tr><td><strong>Ombre</strong></td><td>Sa faille. C'est ce que trouvent <em>Point faible</em>, <em>Diagnostic</em> et <em>Interroger</em>.</td></tr>
+<tr><td><strong>Veut</strong></td><td>Ce qu'il accepterait <strong>à la place</strong> du combat.</td></tr>
+</tbody></table></div>
+<blockquote class="note"><p><strong>Donner à un adversaire ce qu'il veut met fin au combat. Immédiatement, sans jet.</strong><br>
+Le prix est dans la fiction, pas dans les points de vie.</p></blockquote>
+<p><strong>Jouer contre l'ombre —</strong> quand les personnages découvrent l'ombre d'un adversaire <strong>et agissent dessus</strong>, accorde l'un ou l'autre : <strong>+2</strong> à l'action qui l'exploite, ou l'adversaire <strong>perd son geste</strong> pour le reste de la scène.</p>
+<h2 id="les-trois-gabarits" class="titre-n2"><a class="ancre" href="#les-trois-gabarits" aria-label="Lien vers cette section">§</a><span class="intitule">Les trois gabarits</span></h2>
+<div class="table-enveloppe"><table>
+<thead><tr><th></th><th>Défense</th><th>PV</th><th>Dégâts</th><th>Attaque</th></tr></thead>
+<tbody>
+<tr><td><strong>Comparse</strong></td><td>11</td><td>6</td><td>d6</td><td>+3</td></tr>
+<tr><td><strong>Sérieux</strong></td><td>13</td><td>14</td><td>d8</td><td>+5</td></tr>
+<tr><td><strong>Redoutable</strong></td><td>15</td><td>22</td><td>d8 + un geste</td><td>+7</td></tr>
+</tbody></table></div>
+<p><strong>Les adversaires n'ajoutent aucune statistique aux dégâts</strong>, comme les personnages.</p>
+<p><strong>Le geste d'un Redoutable</strong> vaut une greffe : une fois par scène, +5 au jet, un effet marquant. Il peut aussi Outrepasser une fois par scène, avec la même ombre — quelque chose casse.</p>
+<h3 id="deux-regles-sur-le-redoutable" class="titre-n3"><a class="ancre" href="#deux-regles-sur-le-redoutable" aria-label="Lien vers cette section">§</a><span class="intitule">Deux règles sur le Redoutable</span></h3>
+<p><strong>Il agit deux fois par tour.</strong> Contre cinq personnages, un adversaire qui joue une seule fois meurt au deuxième tour sans avoir menacé personne.</p>
+<p><strong>Il ne se présente jamais seul.</strong> Toujours avec des Comparses ou un Sérieux.</p>
+<p><em>Seule exception : la mère-souche, qui <strong>est</strong> le terrain.</em></p>
+<h3 id="les-comparses-lachent" class="titre-n3"><a class="ancre" href="#les-comparses-lachent" aria-label="Lien vers cette section">§</a><span class="intitule">Les comparses lâchent</span></h3>
+<p><strong>Quand la moitié d'une bande est à terre, le reste s'arrête</strong> — il fuit, il se rend, ou il négocie. Aucun jet.</p>
+<h2 id="doser-une-rencontre" class="titre-n2"><a class="ancre" href="#doser-une-rencontre" aria-label="Lien vers cette section">§</a><span class="intitule">Doser une rencontre</span></h2>
+<p>Cinq personnages sortent environ <strong>11 dégâts par tour</strong> en attaquant, et <strong>près du double au premier tour</strong> s'ils lâchent leurs greffes ensemble. Contre une trentaine de points de vie, un combat dure <strong>deux tours</strong>.</p>
+<p><strong>Mettre à l'échelle —</strong> <strong>un Comparse par personnage</strong>. Les Sérieux et le Redoutable ne bougent pas. Trois joueurs affrontent trois Comparses, pas quatre.</p>
+<p><strong>Si tu veux que les surfaces servent —</strong> ajoute des adversaires, pas de la dureté. Six Comparses sur <strong>trois zones</strong> plutôt qu'un gros ennemi : le combat s'allonge, les cibles se multiplient, et <strong>une surface couvre une zone entière</strong>. Un adversaire unique n'occupe jamais qu'une zone.</p>
+<h2 id="huit-adversaires" class="titre-n2"><a class="ancre" href="#huit-adversaires" aria-label="Lien vers cette section">§</a><span class="intitule">Huit adversaires</span></h2>
+<h3 id="adversaires-de-la-ville" class="titre-n3"><a class="ancre" href="#adversaires-de-la-ville" aria-label="Lien vers cette section">§</a><span class="intitule">Adversaires de la ville</span></h3>
+<p><strong>L'inspecteur de milice</strong> — <em>Sérieux</em> · Déf 13 · 14 PV · d8<br>
+<strong>Fait —</strong> il consigne. Ce qu'il a vu existe désormais dans un registre, au nom des personnages.<br>
+<strong>Ombre —</strong> il ne peut pas ne pas consigner. Donnez-lui quelque chose de plus gros à écrire, et il vous oublie.<br>
+<strong>Veut —</strong> que ses registres soient exacts. Il n'est pas corrompu, il est méticuleux.</p>
+<p><strong>L'auditeur de guilde</strong> — <em>Sérieux</em> · Déf 13 · 14 PV · d6<br>
+<strong>Fait —</strong> il produit un contrat sur écorce qui dit que vous avez tort, et il a raison.<br>
+<strong>Ombre —</strong> son mandat s'arrête aux limites de Vasque. En amont, il n'est personne.<br>
+<strong>Veut —</strong> repartir avec une signature. N'importe laquelle, du moment qu'elle est valide.</p>
+<p><strong>Des Bras qu'on a payés</strong> — <em>Comparses</em> · Déf 11 · 6 PV · d6 chacun<br>
+<strong>Fait —</strong> ils prennent en tenaille : deux au Contact, un qui coupe la sortie.<br>
+<strong>Ombre —</strong> ils sont payés à la journée, et pas assez pour mourir.<br>
+<strong>Veut —</strong> rentrer. Payez-les mieux, ou blessez-en un sérieusement.</p>
+<p><strong>Le greffeur radié</strong> — <em>Redoutable</em> · Déf 15 · 22 PV · d8 + geste<br>
+<strong>Fait —</strong> <em>Éveiller</em> : il réveille une porte, une barque, un pan de mur contre vous. 1d8 + 5.<br>
+<strong>Ombre —</strong> son matériel est volé et identifiable. Il ne peut pas se permettre qu'on le fouille.<br>
+<strong>Veut —</strong> que personne ne retrouve ce qu'il a éveillé la première fois. Ce n'était pas une porte.</p>
+<h3 id="adversaires-d-amont" class="titre-n3"><a class="ancre" href="#adversaires-d-amont" aria-label="Lien vers cette section">§</a><span class="intitule">Adversaires d'amont</span></h3>
+<p><strong>Le brûleur de spores</strong> — <em>Sérieux</em> · Déf 13 · 14 PV · d6, et le terrain prend feu<br>
+<strong>Fait —</strong> il pose une surface et il l'allume. Il choisit toujours le terrain avant vous.<br>
+<strong>Ombre —</strong> il ne brûle jamais devant témoins. Rendez la scène publique, il s'arrête.<br>
+<strong>Veut —</strong> que le convoi n'arrive pas. Il se moque de qui le transporte.</p>
+<p><strong>Le meunier et ses fils</strong> — <em>un Sérieux, deux Comparses</em> · d8 <em>(outils lourds)</em><br>
+<strong>Fait —</strong> ils connaissent le moulin. Roue, trappes, sacs : chaque tour, le décor les aide.<br>
+<strong>Ombre —</strong> ils ne veulent pas de morts chez eux. La première blessure grave les fait hésiter.<br>
+<strong>Veut —</strong> que vous soyez partis avant la nuit. Ils ne vous poursuivront pas.</p>
+<p><strong>Le chien de ferme</strong> — <em>Comparse</em> · Déf 11 · 6 PV · d6<br>
+<strong>Fait —</strong> il mord et ne lâche pas. Vous êtes entravé tant qu'il tient.<br>
+<strong>Ombre —</strong> il obéit à une voix. Trouvez à qui, et le combat n'a plus lieu.<br>
+<strong>Veut —</strong> <em>rien.</em> Ce n'est pas un peuple éveillé, il ne négocie pas.</p>
+<blockquote class="note"><p><em>La seule exception de la liste. Sers-t'en pour faire sentir le poids d'un affrontement sans issue — et que ce soit toujours un choix visible.</em></p></blockquote>
+<p><strong>La mère-souche</strong> — <em>Redoutable</em> · Déf 15 · 22 PV · d8 + geste<br>
+<strong>Fait —</strong> elle pousse. Chaque tour, une zone devient encombrée, puis ronces, puis impraticable.<br>
+<strong>Ombre —</strong> elle est enracinée. Elle ne poursuit personne : sortez de sa portée et elle vous oublie.<br>
+<strong>Veut —</strong> qu'on cesse de la tailler. Quelqu'un la récolte depuis des années, et elle s'est réveillée.</p>
+<h2 id="improviser-un-adversaire-en-trente-secondes" class="titre-n2"><a class="ancre" href="#improviser-un-adversaire-en-trente-secondes" aria-label="Lien vers cette section">§</a><span class="intitule">Improviser un adversaire en trente secondes</span></h2>
+<ol><li><strong>Choisis un gabarit.</strong> Les chiffres sont écrits.</li><li><strong>Donne-lui un métier, pas une espèce.</strong> <em>Un percepteur</em>, pas <em>un blaireau</em>.</li><li><strong>Son ombre, c'est ce que son métier l'oblige à faire.</strong> L'inspecteur doit consigner. Le mercenaire doit être payé. Le notable doit sauver la face.</li><li><strong>Ce qu'il veut, c'est ce qu'il aurait obtenu si les personnages n'étaient pas là.</strong></li></ol>
+<blockquote class="note"><p><strong>Test —</strong> <em>ce combat peut-il se terminer sans mort ?</em><br>
+Si non, il te manque la quatrième ligne — ou tu as écrit un chien de ferme, et ça doit se voir.</p></blockquote>
+<hr class="separateur">
+<h1 id="vi-la-boucle-de-campagne" class="titre-n1 titre-chiffre"><a class="ancre" href="#vi-la-boucle-de-campagne" aria-label="Lien vers cette section">§</a><span class="chiffre">VI</span><span class="intitule">La boucle de campagne</span></h1>
+<h2 id="la-premiere-aventure" class="titre-n2"><a class="ancre" href="#la-premiere-aventure" aria-label="Lien vers cette section">§</a><span class="intitule">La première aventure</span></h2>
+<p>Un groupe neuf a une coque <strong>vide</strong> et un équipage entièrement <strong>au Gué</strong> : il n'y a rien à lire sur le bateau. Le premier crochet vient donc de <strong>l'origine de la Gousse</strong>, décidée en séance zéro.</p>
+<div class="table-enveloppe"><table>
+<thead><tr><th>Origine</th><th>Ce que ça pose sur la table</th></tr></thead>
+<tbody>
+<tr><td><strong>Héritée</strong></td><td>Quelqu'un est mort et la leur a laissée. Il y a un nom sur la coque, et des gens qui se souviennent de ce nom.</td></tr>
+<tr><td><strong>Saisie</strong></td><td>Le tribunal l'a confisquée et la leur a confiée en gage. Ils n'en sont pas propriétaires. <em>Pas encore.</em></td></tr>
+<tr><td><strong>Bouturée</strong></td><td>Ils l'ont fait pousser à partir d'une bouture achetée ou volée. Elle est jeune, et quelqu'un connaît la souche mère.</td></tr>
+<tr><td><strong>Trouvée</strong></td><td>Elle dérivait, vide. Quelqu'un finira par venir la réclamer.</td></tr>
+</tbody></table></div>
+<h2 id="les-aventures-suivantes" class="titre-n2"><a class="ancre" href="#les-aventures-suivantes" aria-label="Lien vers cette section">§</a><span class="intitule">Les aventures suivantes</span></h2>
+<ol><li><strong>L'aventure se termine</strong> → le groupe gagne un greffon.</li><li><strong>Il l'installe</strong> à quai.</li><li>Chaque greffon pose <strong>un crochet permanent</strong> : sa ligne <em>ce que ça attire</em>, vraie tant qu'il est là.</li><li><strong>Relis l'Inclinaison de la Gousse</strong> — compte les têtes, rien à calculer.</li><li>Entre deux aventures, <strong>lis la coque comme un menu</strong> : trois crochets et une orientation. Prends-en un, ou <strong>croise-en deux</strong>.</li></ol>
+<blockquote class="note"><p><strong>Exemple.</strong> Une Gousse avec <em>Serre</em>, <em>Nasse</em> et <em>Quai franc</em>, penchée Greffé.<br>
+<em>Serre</em> → une inspection qui revient trop souvent.<br>
+<em>Nasse</em> → quelqu'un a suivi le sillage.<br>
+<em>Quai franc</em> → les ennemis connaissent l'adresse.<br>
+<em>Greffé</em> → les guildes de Vasque envoient des commandes.</p>
+<p><strong>Serre × Greffé :</strong> une guilde passe commande de doses, et la commande est un prétexte pour venir voir la Serre de près.<br>
+<strong>Nasse × Quai franc :</strong> celui qui suivait le sillage sait maintenant où ils dorment.</p></blockquote>
+<p><strong>Ne tire pas au sort. Prends ce qui est mûr.</strong></p>
+<h2 id="ce-que-chaque-bord-attire" class="titre-n2"><a class="ancre" href="#ce-que-chaque-bord-attire" aria-label="Lien vers cette section">§</a><span class="intitule">Ce que chaque bord attire</span></h2>
+<div class="table-enveloppe"><table>
+<thead><tr><th>Inclinaison de la Gousse</th><th>Qui vient frapper</th></tr></thead>
+<tbody>
+<tr><td><strong>Greffé</strong></td><td>Les commandes des guildes, et les inspections</td></tr>
+<tr><td><strong>Sauvage</strong></td><td>Les fugitifs, et les incendiaires</td></tr>
+<tr><td><strong>Au Gué</strong></td><td><strong>Les deux</strong>, et c'est le problème</td></tr>
+</tbody></table></div>
+<h2 id="le-genre-de-la-campagne" class="titre-n2"><a class="ancre" href="#le-genre-de-la-campagne" aria-label="Lien vers cette section">§</a><span class="intitule">Le genre de la campagne</span></h2>
+<p>Le tableau des greffons est le bouton de genre : les crochets urbains appellent le polar, les crochets d'amont appellent le champêtre. Le groupe en change à chaque saison grâce au fanage.</p>
+<hr class="separateur">
+<h1 id="vii-improviser" class="titre-n1 titre-chiffre"><a class="ancre" href="#vii-improviser" aria-label="Lien vers cette section">§</a><span class="chiffre">VII</span><span class="intitule">Improviser</span></h1>
+<h2 id="un-trait" class="titre-n2"><a class="ancre" href="#un-trait" aria-label="Lien vers cette section">§</a><span class="intitule">Un trait</span></h2>
+<ol><li><strong>Nomme le geste répété</strong>, pas la qualité morale. <em>« Il a fui »</em>, pas <em>« il est lâche »</em>.</li><li><strong>La face rend le geste efficace</strong> : +2, ou une petite permission.</li><li><strong>L'ombre ferme ce que le geste a cessé d'entraîner.</strong> Qui recule perd l'habitude de tenir.</li><li>Face et ombre dans la même classe : <strong>±3 quand le domaine tient en un mot, ±2 dès qu'il en faut deux.</strong></li></ol>
+<h2 id="un-objet" class="titre-n2"><a class="ancre" href="#un-objet" aria-label="Lien vers cette section">§</a><span class="intitule">Un objet</span></h2>
+<p>Quand un joueur demande un objet imprévu, la réponse est presque toujours <strong>oui</strong>. Pose trois questions :</p>
+<ol><li><strong>Qu'est-ce que ça mange ?</strong></li><li><strong>Qu'est-ce que ça laisse comme trace ?</strong></li><li><strong>À qui ça appartenait ?</strong></li></ol>
+<p>Et rappelle-toi que <strong>tout outil vivant est une preuve</strong>.</p>
+<h2 id="une-option-nouvelle" class="titre-n2"><a class="ancre" href="#une-option-nouvelle" aria-label="Lien vers cette section">§</a><span class="intitule">Une option nouvelle</span></h2>
+<p>Face et ombre doivent appartenir à la <strong>même classe de fréquence</strong>.</p>
+<div class="table-enveloppe"><table>
+<thead><tr><th>Classe</th><th>Fréquence</th><th>Amplitude</th></tr></thead>
+<tbody>
+<tr><td><strong>Constante</strong></td><td>Presque tout le temps</td><td>±2 maximum</td></tr>
+<tr><td><strong>Fréquente</strong></td><td>Plusieurs fois par séance</td><td>±3</td></tr>
+<tr><td><strong>Rare</strong></td><td>De temps en temps</td><td>±3, ou un effet fictionnel fort</td></tr>
+</tbody></table></div>
+<p><strong>±3 quand le domaine tient en un mot</strong> — grimper, se cacher, les spores, le fleuve.<br>
+<strong>±2 dès qu'il en faut deux</strong> — « tout ce qui repose sur la vue ».</p>
+<blockquote class="note"><p><strong>Test —</strong> <em>si je devais renoncer à cette option, est-ce que ce serait à cause de son ombre ?</em><br>
+Si non, l'ombre est trop faible. Une ombre purement narrative ne compte pas : il lui faut un chiffre, ou une porte fermée nommée.</p></blockquote>
+<hr class="separateur">
+<h1 id="viii-aide-memoire-du-meneur" class="titre-n1 titre-chiffre"><a class="ancre" href="#viii-aide-memoire-du-meneur" aria-label="Lien vers cette section">§</a><span class="chiffre">VIII</span><span class="intitule">Aide-mémoire du meneur</span></h1>
+<blockquote class="note"><p><strong>Gabarits —</strong> Comparse 11 / 6 / d6 / +3 · Sérieux 13 / 14 / d8 / +5 · Redoutable 15 / 22 / d8 / +7, <strong>deux actions</strong>.<br>
+Un Comparse par personnage. Les comparses lâchent à la moitié.</p></blockquote>
+<blockquote class="note"><p><strong>Enquête —</strong> trois lieux, un fait chacun, trois portes par lieu.<br>
+Franc : rien ne bouge · Court : rumeur +1 · Manqué : le fait <strong>quand même</strong>, plus une dette, plus rumeur +1.</p></blockquote>
+<blockquote class="note"><p><strong>Rumeur —</strong> 1 on parle de vous · 2 on vous attend <em>(−2 pour le surprendre)</em> · 3 <strong>il devance</strong>.<br>
+Monte sur : court · manqué · action publique <em>(dont invoquer une Position)</em> · Outrepasser.</p></blockquote>
+<blockquote class="note"><p><strong>Inclinaison —</strong> un cran par acte <strong>public</strong>. Portes et morsure ensemble dès ±2.<br>
+Sauvage : −2 à Souche et Écorce · Greffé : −2 à Racine et Traque. Jamais sous rang 1.</p></blockquote>
+<blockquote class="note"><p><strong>Réactions —</strong> une par tour. <strong>Riposter</strong> <em>(un adversaire au Contact t'attaque et manque)</em> · <strong>S'interposer</strong> <em>(un allié de ta zone est attaqué : ça te vise à la place)</em> · <strong>Rattraper</strong> <em>(quelqu'un quitte ton Contact : tu le suis, sans l'attaquer)</em>.</p></blockquote>
+<blockquote class="note"><p><strong>Fin de combat —</strong> donne-lui ce qu'il veut, et c'est fini. Sans jet.</p></blockquote>
+    <footer class="pied">
+      <p>Bas-Gué — <a href="index.html">retour au port</a> · <a href="creation.html">créer un personnage</a></p>
+    </footer>
+  </main>
+</div>
+
+<button class="haut" id="haut" type="button" title="Remonter">↑<span class="visuellement-cache">Remonter en haut</span></button>
+<script src="assets/site.js"></script>
+</body>
+</html>
