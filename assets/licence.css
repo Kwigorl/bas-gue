@@ -1,0 +1,30 @@
+/* Bas-Gué — page de licence */
+.page-texte{max-width:52rem;margin:0 auto;padding:2.4rem clamp(1rem,4vw,2rem) 4rem}
+.page-texte h1{
+  font-family:var(--titre);font-size:clamp(2rem,5vw,3rem);font-weight:700;line-height:1.02;
+  margin:0 0 1rem;font-variation-settings:"SOFT" 46,"WONK" 1,"opsz" 120;
+}
+.page-texte .chapo{font-size:1.05rem;margin:0 0 2.2rem;max-width:40rem}
+.sigle{font-family:var(--mono);font-size:.8em;white-space:nowrap;color:var(--encre-douce)}
+.page-texte p{margin:0 0 1.1rem;max-width:40rem}
+.titre-section{
+  font-family:var(--titre);font-size:1.35rem;font-weight:600;margin:2.4rem 0 .8rem;
+  font-variation-settings:"SOFT" 34,"WONK" 1;
+}
+.deux-colonnes{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--trait);
+  border:1px solid var(--trait);border-radius:var(--rayon);overflow:hidden;margin-bottom:1.4rem}
+.deux-colonnes section{background:var(--vase);padding:1.2rem 1.3rem 1.3rem}
+.deux-colonnes h2{
+  font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;
+  margin:0 0 .8rem;font-weight:500;
+}
+.permis h2{color:var(--lichen)}
+.interdit h2{color:var(--ecorce)}
+.deux-colonnes ul{margin:0 0 .9rem;font-size:.94rem}
+.deux-colonnes li{margin:.35rem 0}
+.interdit li::before{background:var(--ecorce)}
+.condition{font-size:.88rem;color:var(--encre-douce);border-top:1px solid var(--trait);padding-top:.7rem;margin:0}
+.condition b{color:var(--encre)}
+.contact{font-family:var(--mono);font-size:.85rem}
+.renvoi{font-size:.85rem;color:var(--encre-douce);border-left:2px solid var(--trait-fort);padding-left:.8rem}
+@media (max-width:720px){.deux-colonnes{grid-template-columns:1fr}}

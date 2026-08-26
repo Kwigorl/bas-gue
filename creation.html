@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Créer un personnage — Bas-Gué</title>
+<meta name="description" content="Dix étapes, dix minutes : fabrique un personnage de Bas-Gué et imprime sa fiche.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,0..100,0..1;1,9..144,400..800,0..100,0..1&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/creation.css">
+<link rel="icon" href="assets/lichen.svg">
+<script>try{var t=localStorage.getItem('basgue-lampe');if(t)document.documentElement.dataset.lampe=t;}catch(e){}</script>
+</head>
+<body class="page-creation">
+
+<a class="saut-contenu" href="#etapes">Aller aux étapes</a>
+
+<header class="barre">
+  <a class="marque" href="index.html"><span class="marque-nom">Bas-Gué</span><span class="marque-sous">jeu de rôle</span></a>
+  <nav class="barre-nav">
+    <a href="manuel-joueureuses.html">Joueureuses</a>
+    <a href="manuel-meneur.html">Meneureuses</a>
+    <a href="creation.html" aria-current="page">Créer un personnage</a>
+    <a href="fiche.html">Fiche vierge</a>
+  </nav>
+  <div class="barre-outils">
+    <button class="lampe" id="lampe" type="button" aria-pressed="false" title="Allumer ou éteindre le lichen">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle class="lampe-halo" cx="12" cy="11" r="9"/><path d="M12 3.5c-3 0-5.2 2.2-5.2 5 0 2 1.1 3.1 1.9 4.1.6.7.9 1.3.9 2.1h4.8c0-.8.3-1.4.9-2.1.8-1 1.9-2.1 1.9-4.1 0-2.8-2.2-5-5.2-5z"/><path d="M9.6 17.4h4.8M10.4 19.6h3.2"/></svg>
+      <span class="visuellement-cache">Lumière</span>
+    </button>
+  </div>
+</header>
+
+<div class="atelier">
+
+  <div class="atelier-entete">
+    <h1>Créer un personnage</h1>
+    <p class="chapo">Dix étapes, dans l’ordre, une dizaine de minutes. Rien à payer, rien à calculer : la fiche se remplit à mesure, à droite. Elle reste sur cet appareil tant que tu ne l’effaces pas. Si tu préfères le crayon, prends la <a href="fiche.html">fiche vierge</a>.</p>
+    <ol class="jalons" id="jalons"></ol>
+  </div>
+
+  <div class="atelier-grille">
+
+    <div class="etapes" id="etapes">
+
+      <section class="etape" id="etape-1" data-etape="1">
+        <h2><span class="etape-num">1</span> Ton espèce</h2>
+        <p class="etape-dit">N’importe quel animal. <strong>Elle ne donne aucun bonus.</strong> Elle dit ta tête, ta démarche et ton odeur — et elle guide les trois choix suivants.</p>
+        <label class="champ">
+          <span class="champ-libelle">Espèce</span>
+          <input type="text" id="espece" placeholder="martre, ragondin, héron cendré, pangolin…" autocomplete="off">
+        </label>
+        <p class="etape-note">Ta taille est libre : tous les peuples vont du jeune enfant à l’ours debout. Le gabarit se choisit à l’étape suivante, l’espèce ne l’impose pas.</p>
+      </section>
+
+      <section class="etape" id="etape-2" data-etape="2">
+        <h2><span class="etape-num">2</span> Ton corps</h2>
+        <p class="etape-dit">Une morphologie et un gabarit. Chacun donne une face et une ombre — les deux comptent.</p>
+        <h3 class="sous-titre">Morphologie</h3>
+        <div class="options" id="opt-morphologie"></div>
+        <h3 class="sous-titre">Gabarit</h3>
+        <div class="options options-serrees" id="opt-gabarit"></div>
+      </section>
+
+      <section class="etape" id="etape-3" data-etape="3">
+        <h2><span class="etape-num">3</span> Ton sens</h2>
+        <p class="etape-dit">Un sens dominant. Les autres fonctionnent normalement ; celui-ci décide où tu es lae meilleur·e du groupe, et où tu es aveugle.</p>
+        <div class="options" id="opt-sens"></div>
+      </section>
+
+      <section class="etape" id="etape-4" data-etape="4">
+        <h2><span class="etape-num">4</span> Ta position</h2>
+        <p class="etape-dit">Elle ne t’appartient pas : elle décrit ce que Bas-Gué pense de toi. C’est un fait du monde, vrai pour toute la table. Les espèces citées sont indicatives — un rat qui a fait fortune est une Haute Maison.</p>
+        <div class="options" id="opt-position"></div>
+      </section>
+
+      <section class="etape" id="etape-5" data-etape="5">
+        <h2><span class="etape-num">5</span> Tes statistiques</h2>
+        <p class="etape-dit">Répartis <strong>3 / 3 / 2 / 2 / 1</strong>. Tes deux 3 désignent la famille de greffes où tu seras le meilleur — et ton 1 ferme quatre familles sur dix.</p>
+        <div class="jetons" id="jetons"><span class="jetons-libelle">Reste à placer</span><span class="jetons-liste" id="jetons-liste"></span></div>
+        <div class="stats" id="stats"></div>
+        <div class="derivees" id="derivees"></div>
+        <div class="rangs" id="rangs">
+          <p class="rangs-titre">Ce que ça donne aux dix familles</p>
+          <div class="rangs-grille" id="rangs-grille"></div>
+        </div>
+        <p class="etape-note"><button class="mini-bouton" type="button" id="stats-hasard">Répartir au hasard</button> <button class="mini-bouton" type="button" id="stats-vider">Tout retirer</button></p>
+      </section>
+
+      <section class="etape" id="etape-6" data-etape="6">
+        <h2><span class="etape-num">6</span> Tes greffes</h2>
+        <p class="etape-dit">Trois greffes, <strong>dont au moins une de rang 2 ou plus</strong>. Le rang est la plus faible des deux statistiques de la famille : une greffe ne prend pas si l’une des deux branches ne la porte pas. Le jet est de <span class="mono">d20 + rang + 2</span>.</p>
+        <div class="greffes" id="greffes"></div>
+      </section>
+
+      <section class="etape" id="etape-7" data-etape="7">
+        <h2><span class="etape-num">7</span> Ce que tu portes</h2>
+        <p class="etape-dit">Trois choses, et rien à payer. L’équipement ne donne jamais de bonus à un jet — il peut seulement en retirer.</p>
+        <h3 class="sous-titre">Une arme</h3>
+        <div class="options options-serrees" id="opt-arme"></div>
+        <h3 class="sous-titre">Un outil vivant</h3>
+        <div class="options" id="opt-outil"></div>
+        <p class="etape-note">Et ce que l’accès de ta Position couvre : vêtements de travail, outils de ton métier, ce que ton milieu te fournit sans y penser. Rien à noter — ça se joue. Tu n’as <strong>pas</strong> de plastron d’écorce : il s’obtient en jouant.</p>
+      </section>
+
+      <section class="etape etape-fixe" id="etape-8" data-etape="8">
+        <h2><span class="etape-num">8</span> Ton Inclinaison</h2>
+        <p class="etape-dit"><strong>0 — au Gué</strong>, comme tout le monde au départ. Tu disposes de <em>Passeur</em> : une fois par séance, tu transformes un refus en un <em>oui, à une condition</em>. N’importe quel refus, de n’importe qui, des deux bords.</p>
+        <div class="regle-inclinaison" aria-hidden="true">
+          <span>Sauvage</span>
+          <div class="regle-barre"><i class="regle-curseur"></i></div>
+          <span>Greffé</span>
+        </div>
+      </section>
+
+      <section class="etape etape-fixe" id="etape-9" data-etape="9">
+        <h2><span class="etape-num">9</span> Ce que tu n’as pas</h2>
+        <p class="etape-dit">Zéro trait, zéro marque, zéro dette. Rien de tout ça ne se choisit : ça s’attrape en jouant, et c’est la moitié de l’intérêt.</p>
+      </section>
+
+      <section class="etape" id="etape-10" data-etape="10">
+        <h2><span class="etape-num">10</span> Deux phrases</h2>
+        <div class="deux-champs">
+          <label class="champ">
+            <span class="champ-libelle">Ton nom</span>
+            <input type="text" id="nom" placeholder="Ourdie" autocomplete="off">
+          </label>
+          <label class="champ">
+            <span class="champ-libelle">Comment on t’appelle sur les quais</span>
+            <input type="text" id="surnom" placeholder="la Trappe" autocomplete="off">
+          </label>
+        </div>
+        <label class="champ">
+          <span class="champ-libelle">Pourquoi tu es sur la Gousse</span>
+          <textarea id="phrase" rows="3" placeholder="Une phrase, qui doit impliquer au moins un autre personnage de la table."></textarea>
+        </label>
+        <div class="amorces" id="amorces"></div>
+      </section>
+
+    </div>
+
+    <aside class="fiche-colonne">
+      <div class="fiche-boite">
+        <div class="fiche" id="fiche"></div>
+        <div class="fiche-actions">
+          <button type="button" class="bouton bouton-plein" id="imprimer">Imprimer la fiche</button>
+          <button type="button" class="bouton" id="exporter">Enregistrer (.json)</button>
+          <button type="button" class="bouton" id="importer-declencheur">Charger un fichier</button>
+          <button type="button" class="bouton bouton-discret" id="effacer">Tout effacer</button>
+          <input type="file" id="importer" accept="application/json,.json" hidden>
+        </div>
+        <p class="fiche-etat" id="fiche-etat"></p>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<footer class="pied-site">
+  <p class="pied-liens"><a href="index.html">Accueil</a> · <a href="manuel-joueureuses.html">Manuel des joueureuses</a> · <a href="fiche.html">Fiche vierge</a></p>
+  <p class="pied-licence">Bas-Gué par <b>Kwigorl</b> — partagé sous <a href="licence.html">CC BY-NC-SA 4.0</a> : libre à jouer, à copier et à modifier, <strong>jamais à vendre</strong>.</p>
+</footer>
+
+<script src="assets/donnees.js"></script>
+<script src="assets/site.js"></script>
+<script src="assets/creation.js"></script>
+</body>
+</html>

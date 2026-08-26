@@ -1,0 +1,47 @@
+Bas-Gué — un jeu de rôle
+Copyright (c) 2026 Kwigorl
+
+=== CONTENU DU JEU ===
+Les deux manuels, les textes de ce site, la carte, les schémas et la fiche de
+personnage sont mis à disposition selon les termes de la licence
+
+    Creative Commons Attribution - Pas d'Utilisation Commerciale -
+    Partage dans les Mêmes Conditions 4.0 International
+    (CC BY-NC-SA 4.0)
+
+Résumé en français : https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr
+Texte juridique     : https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.fr
+
+En résumé : vous pouvez jouer, copier, imprimer, diffuser, traduire et modifier
+cette oeuvre librement, à condition de citer Bas-Gué et son auteur, de partager
+vos versions modifiées sous la même licence, et de n'en faire AUCUN usage
+commercial sans autorisation écrite préalable de l'auteur.
+
+Explication en français clair : voir licence.html sur le site.
+
+=== CODE DU SITE ===
+Le convertisseur (build.py), les feuilles de style et les scripts JavaScript
+sont mis à disposition selon les termes de la licence
+
+    PolyForm Noncommercial License 1.0.0
+    https://polyformproject.org/licenses/noncommercial/1.0.0/
+
+=== USAGE COMMERCIAL ===
+L'auteur conserve l'intégralité de ses droits et peut accorder, au cas par cas,
+une licence commerciale. Pour toute demande : https://github.com/Kwigorl/bas-gue
+
+--------------------------------------------------------------------------
+NOTE POUR L'AUTEUR — à supprimer une fois fait.
+
+Ce fichier désigne les licences sans en reproduire le texte intégral. C'est
+suffisant pour informer, mais l'usage est d'inclure le texte complet. Pour le
+faire, depuis ce dossier :
+
+    curl -o LICENSE-CONTENU https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt
+    curl -o LICENSE-CODE https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Noncommercial-1.0.0.txt
+
+puis garde ce fichier LICENSE comme sommaire renvoyant aux deux autres.
+
+GitHub ne reconnait pas les licences non commerciales dans son encadré
+"About" : le dépôt affichera "View license" au lieu du nom. C'est normal.
+--------------------------------------------------------------------------

@@ -1,0 +1,43 @@
+<figure class="carte schema-zones">
+<svg viewBox="0 0 760 210" role="img" aria-labelledby="zones-titre zones-desc" class="carte-svg">
+  <title id="zones-titre">Comment se comptent les distances</title>
+  <desc id="zones-desc">Quatre zones nommées se touchent en file : le pont où tu te trouves est le Contact, les caisses sont Proche, la passerelle est Loin, et le toit de lichen est hors de portée.</desc>
+
+  <!-- zones -->
+  <g class="zone">
+    <rect class="zone-fond zone-toi" x="14" y="46" width="172" height="86" rx="26"/>
+    <text class="zone-nom" x="100" y="84">le pont</text>
+    <text class="zone-toi-tag" x="100" y="108">tu es ici</text>
+  </g>
+  <g class="zone">
+    <rect class="zone-fond" x="200" y="46" width="172" height="86" rx="26"/>
+    <text class="zone-nom" x="286" y="96">les caisses</text>
+  </g>
+  <g class="zone">
+    <rect class="zone-fond" x="386" y="46" width="172" height="86" rx="26"/>
+    <text class="zone-nom" x="472" y="96">la passerelle</text>
+  </g>
+  <g class="zone">
+    <rect class="zone-fond zone-hors" x="572" y="46" width="174" height="86" rx="26"/>
+    <text class="zone-nom" x="659" y="96">le toit de lichen</text>
+  </g>
+
+  <!-- étiquettes de distance -->
+  <text class="zone-etiquette zone-etiquette-forte" x="100" y="30">Contact</text>
+  <text class="zone-etiquette" x="286" y="30">Proche</text>
+  <text class="zone-etiquette" x="472" y="30">Loin</text>
+  <text class="zone-etiquette zone-etiquette-pale" x="659" y="30">Hors de portée</text>
+
+  <!-- sauts de déplacement -->
+  <g class="saut">
+    <path d="M186,158 C220,182 252,182 286,160"/>
+    <path d="M286,160 l-8,-6 l10,-3 z" class="pointe"/>
+    <text x="236" y="196">1 déplacement</text>
+
+    <path d="M200,168 C286,206 386,206 470,170"/>
+    <path d="M470,170 l-9,-4 l8,-6 z" class="pointe"/>
+    <text x="430" y="196">2 déplacements, ou se précipiter</text>
+  </g>
+</svg>
+<figcaption>Les zones se touchent dans l’ordre où on les a nommées. <strong>Un déplacement vaut une zone</strong>, quelle que soit sa taille dans la fiction.</figcaption>
+</figure>
