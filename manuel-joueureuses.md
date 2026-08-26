@@ -90,7 +90,7 @@ Le nom dit les deux choses : le gué qu'on traverse, et le Gué qu'on tient.
 | **Palier** | Un cran de progression. Cinq en tout, franchis par tout le groupe en même temps. |
 | **Zone** | Une portion nommée d'un lieu : *le pont*, *les caisses*, *l'eau*. |
 | **Seuil** | Le nombre à atteindre sur un jet. Lae meneureuse l'annonce avant que tu lances. |
-| **Franc · Court · Manqué** | Les [[#Trois résultats|trois résultats]] de tout jet du jeu. |
+| **Franc · Court · Manqué** | Les [[#Trois résultats\|trois résultats]] de tout jet du jeu. |
 | **Outrepasser** | Forcer un jet, une fois par scène. Deux d20, le meilleur, un effet renforcé — et quelque chose casse. |
 | **Greffe** | Une capacité. Une chose vivante qu'on a fait pousser en toi. Une fois par scène. |
 | **Rang** | La puissance d'une greffe, de 1 à 4. La **plus faible** des deux statistiques de sa famille. |

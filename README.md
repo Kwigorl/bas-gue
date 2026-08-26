@@ -51,6 +51,8 @@ Le script relit les deux `.md`, régénère `manuel-joueureuses.html` et `manuel
 - Les liens vers des notes qui n’existent pas encore (*La commande*, *Pré-tirés*, *Notes d’arbitrage*) s’affichent en gris pointillé, sans casser la page. Le jour où tu ajoutes ces notes, déclare-les dans `NOTE_TARGETS` en haut de `build.py` et elles deviendront des liens.
 - `![[Bas-Gué - Carte.svg]]` est remplacé par le contenu de `carte.svg`, qui est un vrai SVG inline : il suit le thème clair/sombre et reste lisible à l’impression.
 
+> **Un piège d’Obsidian.** Dans un **tableau**, le `|` d’un wikilink doit être échappé : `[[#Les marques\|les marques]]`. Sans l’antislash, la cellule se coupe au milieu du lien. `build.py` le signale désormais au moment du build, avec le fichier et le numéro de ligne — s’il n’affiche rien, tout va bien.
+
 Après le build, tu peux vérifier qu’aucun lien n’est cassé :
 
 ```bash

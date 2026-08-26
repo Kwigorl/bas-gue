@@ -48,6 +48,19 @@ class Doc:
         self.anchors = {}   # texte brut d'ancre -> slug
 
 
+def verifier_pipes(doc):
+    """Un wikilink dans un tableau doit échapper son | (\\|), sinon la cellule se coupe."""
+    souci = []
+    for num, ligne in enumerate(doc.raw.split("\n"), 1):
+        if ligne.lstrip().startswith("|"):
+            if re.search(r"\[\[[^\]\\|]+\|", ligne):
+                souci.append((num, ligne.strip()[:70]))
+    for num, txt in souci:
+        print("  ATTENTION %s ligne %d : wikilink à pipe non échappé — %s"
+              % (doc.path, num, txt))
+    return souci
+
+
 def collect_headings(doc):
     for line in doc.raw.split("\n"):
         m = re.match(r"^(#{1,4})\s+(.*)$", line)
@@ -284,6 +297,7 @@ def main():
     for key, (path, out, title) in SRC.items():
         DOCS[key] = Doc(key, path, out, title)
     for d in DOCS.values():
+        verifier_pipes(d)
         collect_headings(d)
     for d in DOCS.values():
         h = page(d, tpl)
