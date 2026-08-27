@@ -350,7 +350,7 @@ html[data-lampe="nuit"] .carte .pastille-forte{filter:drop-shadow(0 0 8px rgba(2
 /* mention de licence, en pied de toutes les pages */
 .pied-licence{
   font-family:var(--mono);font-size:.68rem;line-height:1.6;color:var(--encre-douce);
-  margin:.5rem 0 0;max-width:44rem;
+  margin:.5rem 0 0;
 }
 .pied-licence b{color:var(--encre);font-weight:500}
 .pied-licence strong{color:var(--ecorce);font-weight:500}
@@ -361,17 +361,22 @@ html[data-lampe="nuit"] .carte .pastille-forte{filter:drop-shadow(0 0 8px rgba(2
 /* ---------- pied de page, commun à toutes les pages ---------- */
 .pied-site{
   border-top:1px solid var(--trait);
-  padding:1.8rem clamp(1rem,4vw,2.5rem) 3rem;
+  padding:1.8rem clamp(1rem,4vw,2rem) 3rem;
   margin:3rem auto 0;
+  max-width:52rem;               /* repli si la page n'a pas de classe */
   color:var(--encre-douce);font-size:.88rem;
 }
-.pied-liens{font-family:var(--mono);font-size:.72rem;margin:0 0 .1rem}
-.pied-site p{margin:0 0 .35rem}
+.pied-site p{margin:0 0 .35rem;text-wrap:pretty}
 .pied-site p:last-child{margin-bottom:0}
+.pied-liens{font-family:var(--mono);font-size:.72rem;margin:0 0 .1rem}
 
-/* il s'aligne sur la colonne de texte de chaque page */
-.page-accueil  .pied-site{max-width:76rem}
-.page-creation .pied-site{max-width:80rem}
-.page-fiche    .pied-site{max-width:64rem}
-.page-licence  .pied-site{max-width:52rem}
-.page-table    .pied-site{max-width:50rem}
+/* le pied s'aligne exactement sur la colonne de texte de sa page :
+   même largeur maximale ET même retrait horizontal que le contenu. */
+.page-accueil  .pied-site{max-width:76rem;padding-inline:clamp(1rem,4vw,2.5rem)}
+.page-creation .pied-site{max-width:80rem;padding-inline:clamp(.9rem,3vw,2rem)}
+.page-fiche    .pied-site{max-width:64rem;padding-inline:clamp(.6rem,3vw,2rem)}
+.page-licence  .pied-site{max-width:52rem;padding-inline:clamp(1rem,4vw,2rem)}
+.page-table    .pied-site{max-width:50rem;padding-inline:clamp(1rem,4vw,2rem)}
+
+/* pas de mot esseulé sur la dernière ligne */
+.pied-licence,.pied-liens{text-wrap:balance}
