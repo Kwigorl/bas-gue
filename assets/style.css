@@ -356,3 +356,22 @@ html[data-lampe="nuit"] .carte .pastille-forte{filter:drop-shadow(0 0 8px rgba(2
 .pied-licence strong{color:var(--ecorce);font-weight:500}
 .pied-licence a{color:var(--fleuve)}
 .pied .pied-licence{margin-top:.4rem}
+
+
+/* ---------- pied de page, commun à toutes les pages ---------- */
+.pied-site{
+  border-top:1px solid var(--trait);
+  padding:1.8rem clamp(1rem,4vw,2.5rem) 3rem;
+  margin:3rem auto 0;
+  color:var(--encre-douce);font-size:.88rem;
+}
+.pied-liens{font-family:var(--mono);font-size:.72rem;margin:0 0 .1rem}
+.pied-site p{margin:0 0 .35rem}
+.pied-site p:last-child{margin-bottom:0}
+
+/* il s'aligne sur la colonne de texte de chaque page */
+.page-accueil  .pied-site{max-width:76rem}
+.page-creation .pied-site{max-width:80rem}
+.page-fiche    .pied-site{max-width:64rem}
+.page-licence  .pied-site{max-width:52rem}
+.page-table    .pied-site{max-width:50rem}
