@@ -113,8 +113,8 @@ Le nom dit les deux choses : le gué qu'on traverse, et le Gué qu'on tient.
 | Terme | Définition |
 |---|---|
 | **Bas-Gué** | Le port. Un bateau vivant qui a cessé de naviguer et pris racine là où le fleuve se passe à gué. |
-| **Vasque** | En aval, à deux jours de remontée. La grande ville organique : guildes, registres, fortunes. |
-| **L'amont** | En remontant : les moulins, les vergers, les villages. On y parle les dettes, on ne les écrit pas. |
+| **Vasque** | En aval : **un jour pour y descendre, deux pour en revenir**. La grande ville organique : guildes, registres, fortunes. |
+| **L'amont** | En remontant, donc toujours plus long qu'au retour : les moulins, les vergers, les villages. On y parle les dettes, on ne les écrit pas. |
 | **Tenir le Gué** | N'être d'aucun des deux bords. La position de départ de tout le monde. |
 | **Éveillé·e** | Se dit des peuples qui parlent et héritent, par opposition aux **bêtes ordinaires**. Personne ne sait pourquoi les uns et pas les autres. |
 | **Greffer** | Imposer une forme à un vivant qui n'a rien demandé. C'est cet acte-là que juge le tribunal. **Porter** une greffe est banal ; **greffer** ne l'est pas. |

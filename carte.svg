@@ -44,18 +44,18 @@
 
   <!-- distances : remontée -->
   <g class="mesure">
-    <text x="118" y="126">1 j</text>
-    <text x="286" y="140">1 j</text>
-    <text x="456" y="152">½ j</text>
-    <text x="628" y="204">2 j</text>
+    <text x="118" y="126">1 j ↑</text>
+    <text x="286" y="140">1 j ↑</text>
+    <text x="456" y="152">½ j ↑</text>
+    <text x="628" y="204">2 j ↑</text>
   </g>
 
   <!-- sens du courant -->
   <g class="courant">
-    <path d="M560,44 L648,44"/>
-    <path d="M648,44 l-9,-5 l0,10 z" class="pointe"/>
-    <text x="604" y="32">le courant descend</text>
-    <text x="604" y="62">remonter coute le double</text>
+    <path d="M40,262 L690,262"/>
+    <path d="M690,262 l-10,-5.5 l0,11 z" class="pointe"/>
+    <text x="300" y="252">le courant descend vers Vasque</text>
+    <text x="140" y="286">↑ les chiffres sont ceux de la remontée — descendre coute la moitié</text>
   </g>
 </svg>
 <figcaption>Tout se compte en <strong>jours de fleuve</strong>. Les chiffres portés sont ceux de la <em>remontée</em> ; descendre coute la moitié.</figcaption>
