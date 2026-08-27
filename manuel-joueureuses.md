@@ -426,6 +426,11 @@ Tu n'as **pas** de plastron d'écorce : il s'obtient en jouant.
 - Ton nom, et comment on t'appelle sur les quais.
 - **Pourquoi tu es sur la [[#XII. La Gousse|Gousse]].** Une phrase, qui doit impliquer au moins un autre personnage de la table.
 
+> **Avant d'écrire cette phrase-là, trois choses.**
+> La Gousse est une coque vivante, et c'est **le seul bien que le groupe possède en commun**. Elle n'est à personne en particulier : tu n'es ni l'invité·e de quelqu'un, ni le ou la propriétaire.
+> **[[#D'où vient la vôtre|D'où elle vient]] a été décidé ensemble**, en séance zéro — héritée, saisie, bouturée ou trouvée. Aucune des quatre ne dit *« elle est à vous, tranquillement »* : dans les quatre cas, quelqu'un d'autre a un avis sur votre bateau.
+> Ta phrase doit tenir avec cette origine-là. On n'écrit pas la même chose sur une coque héritée d'un mort que sur une coque que le tribunal vous a confiée en gage.
+
 ---
 
 ## Un personnage fini : Ourdie

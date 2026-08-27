@@ -194,7 +194,7 @@ Les listes d'espèces sont indicatives, jamais prescriptives.
 
 ## Ce qu'on ne joue pas
 
-- **Pas d'accent, pas de voix** — rien qui transforme un peuple en imitation.
+- **Une voix par personnage, jamais par peuple.** Baisser d'un ton pour Dame Verne, parler vite pour Poix : oui, ce sont des personnes. Un accent de rat, une diction de sanglier : non. Les espèces sont adossées à des [[Bas-Gué — Manuel des joueureuses#4. Ta position\|positions sociales]] — donner un son à un peuple, c'est fabriquer un accent de classe en trois séances, et il collera ensuite à tous les rats de la ville.
 - **Le préjugé vient du monde, pas des joueureuses.** On ne se sert pas de sa Position pour rabaisser le personnage d'un autre. Si la fiction l'exige, on le dit avant la scène.
 - **Aucune espèce n'est mauvaise.** Il n'y a pas de peuple traitre, violent ou voleur. Il y a des positions sociales qui produisent des comportements.
 - **Les préjugés ne sont pas la vanne récurrente de la campagne.**
