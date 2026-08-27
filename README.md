@@ -8,6 +8,7 @@ manuel-joueureuses.html     généré depuis le markdown
 manuel-meneur.html          généré depuis le markdown
 creation.html               l’atelier de création de personnage
 fiche.html                  la fiche vierge, deux pages A4 à imprimer
+table.html                  six scènes d’une partie, transcrites
 licence.html                la licence expliquée en français clair
 LICENSE                     ce que GitHub lit
 CONTRIBUTING.md             les conditions pour contribuer

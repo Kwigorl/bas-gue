@@ -189,3 +189,5 @@ html[data-lampe="nuit"] .coque .lichen-point:nth-of-type(3){animation-delay:2.6s
   .bord-greffe small{margin-left:0}
   .regle-ligne{height:2.2rem}
 }
+.manuel-table{border-left:3px solid var(--seve)}
+.manuel-table .manuel-eyebrow{color:var(--seve)}

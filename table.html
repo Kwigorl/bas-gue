@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Une soirée à la table — Bas-Gué</title>
+<meta name="description" content="Six scènes d'une partie de Bas-Gué, transcrites telles qu'elles se sont jouées : l'enquête, la négociation, le combat, le tribunal, le retour à quai.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,0..100,0..1;1,9..144,400..800,0..100,0..1&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/table.css">
+<link rel="icon" href="assets/lichen.svg">
+<script>try{var t=localStorage.getItem('basgue-lampe');if(t)document.documentElement.dataset.lampe=t;}catch(e){}</script>
+</head>
+<body class="page-table">
+
+<header class="barre">
+  <a class="marque" href="index.html"><span class="marque-nom">Bas-Gué</span><span class="marque-sous">jeu de rôle</span></a>
+  <nav class="barre-nav">
+    <a href="manuel-joueureuses.html">Joueureuses</a>
+    <a href="manuel-meneur.html">Meneureuses</a>
+    <a href="creation.html">Créer un personnage</a>
+    <a href="fiche.html">Fiche vierge</a>
+  </nav>
+  <div class="barre-outils">
+    <button class="lampe" id="lampe" type="button" aria-pressed="false" title="Allumer ou éteindre le lichen">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle class="lampe-halo" cx="16" cy="14" r="11"/><path class="lampe-bulbe" fill-rule="evenodd" d="M16 5c-4 0-7 3-7 6.7 0 2.7 1.5 4.2 2.6 5.5.8 1 1.2 1.8 1.2 2.8h6.4c0-1 .4-1.8 1.2-2.8C21.5 15.9 23 14.4 23 11.7 23 8 20 5 16 5zM11.7 10.4a1.5 1.5 0 1 0 3 0 1.5 1.5 0 1 0-3 0zM17.3 9.2a1.1 1.1 0 1 0 2.2 0 1.1 1.1 0 1 0-2.2 0zM15.7 13.9a1.7 1.7 0 1 0 3.4 0 1.7 1.7 0 1 0-3.4 0zM11.6 15.2a1 1 0 1 0 2 0 1 1 0 1 0-2 0z"/><path class="lampe-culot" d="M12.6 23.4h6.8M13.6 26.4h4.8"/></svg>
+      <span class="visuellement-cache">Lumière</span>
+    </button>
+  </div>
+</header>
+
+<main class="page-table-corps">
+
+  <div class="table-entete">
+    <p class="eyebrow">Une soirée</p>
+    <h1>Ce que ça donne,<br>une fois à table.</h1>
+    <p class="chapo">Six scènes d’une même aventure, transcrites. Les dés sont donnés en entier, et ce qui est dit hors fiction est mis à part. Si tu hésites à lire cinquante pages de règles, lis d’abord ça : tu sauras si le jeu te ressemble.</p>
+  </div>
+
+  <section class="equipage">
+    <h2 class="titre-section">L’équipage de la <em>Marne</em></h2>
+    <div class="equipage-grille">
+      <article>
+        <h3>Ourdie <span>martre, dite la Trappe</span></h3>
+        <p class="chiffres">Grimpeuse · petit gabarit · <em>Vibrisses</em> · Gens de terriers</p>
+        <p class="chiffres">Poigne 1 · Patte 3 · Nez 3 · Sève 2 · Verbe 2 — Défense 13 · 10 PV</p>
+        <p>Arme fine. Greffe maitresse : <em>Point faible</em>, rang 3, variante <em>Partagé</em>. Elle ne frappe pas fort : elle désigne où frapper.</p>
+      </article>
+      <article>
+        <h3>Bourre <span>blaireau</span></h3>
+        <p class="chiffres">Longue haleine · gabarit commun · <em>Nez de limier</em> · Les Bras</p>
+        <p class="chiffres">Poigne 3 · Patte 2 · Nez 3 · Sève 2 · Verbe 1 — Défense 12 · 14 PV</p>
+        <p>Arme lourde. Elle encaisse, elle suit une piste vieille de trois jours, et elle n’a jamais su mentir.</p>
+      </article>
+      <article>
+        <h3>Corneille <span>corneille</span></h3>
+        <p class="chiffres">Membrane · gabarit commun · <em>Vue de rapace</em> · Parole reconnue</p>
+        <p class="chiffres">Poigne 1 · Patte 2 · Nez 3 · Sève 2 · Verbe 3 — Défense 12 · 10 PV</p>
+        <p>Greffe : <em>Interroger</em>, rang 3, variante <em>Devant témoins</em>. Son témoignage fait foi sans qu’on l’interroge — et rien de ce qu’elle fait ne passe inaperçu.</p>
+      </article>
+    </div>
+    <p class="equipage-note">L’affaire : une écorcerie de guilde tient un registre où <strong>une semaine entière manque</strong>. Trois lieux, trois faits. On prend la soirée au deuxième.</p>
+  </section>
+
+  <!-- ===================== 1 ===================== -->
+  <section class="scene">
+    <h2><span class="scene-num">1</span> L’enquête — un lieu, trois portes</h2>
+    <p class="situation">Le lieu : l’écorcerie. Le fait : le registre saute du 3 au 11. Les trois portes fonctionnent toujours ; ce qui change, c’est ce qu’elles coutent.</p>
+
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Vous êtes devant l’écorcerie. Un commis derrière un comptoir bas, des planches d’écorce empilées jusqu’au plafond, et une odeur de sève chaude. Vous voulez y entrer par où ?</p>
+    <p class="r r-j"><span class="qui">Corneille</span> Par le commis. Je le fais parler.</p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Alors je te dis ce que cette porte coute <em>ici</em>. Il sait, et il ne demande pas d’argent — il n’y en a pas. Il veut partir en amont et il n’en a pas les moyens. Tu lances contre 11.</p>
+    <p class="de"><span class="lance">d20 → 14</span> + Verbe 3 = <b>17</b> · Seuil 11 <span class="verdict franc">franc</span></p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Il te donne le fait proprement, et il ajoute quelque chose que tu n’avais pas demandé : ce n’est pas la première fois qu’on retaille cette écorce. — Mais tu lui as promis un passage. <strong>Tu dois une dette au commis de l’écorcerie.</strong> Un nom, et ce qui est dû, sur ta feuille.</p>
+
+    <aside class="apparte">
+      <p>Sur un franc, rien ne bouge : le fait est obtenu proprement. La dette n’est pas une pénalité — c’est le <em>prix affiché</em> de cette porte-là, annoncé avant le jet.</p>
+    </aside>
+
+    <p class="r r-j"><span class="qui">Bourre</span> Moi je regarde l’écorce elle-même. Elle a été retaillée, ça doit se sentir.</p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> La porte de la trace. Nez de limier, +3. Ce qu’elle coute ici : fouiller se voit, et le comptoir donne sur la rue. Seuil 11.</p>
+    <p class="de"><span class="lance">d20 → 9</span> + Nez 3 + sens 3 = <b>15</b> · Seuil 11 <span class="verdict court">court</span></p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Tu l’as : la coupe est fraiche de six jours, et elle est nette — c’est un outil de greffeur, pas un couteau. Et je te dis tout de suite ce qui tourne mal : une apprentie t’a vue le nez dans les planches, et elle est déjà partie le dire. <strong>La rumeur monte d’un cran.</strong></p>
+    <p class="r r-j"><span class="qui">Ourdie</span> Et la copie de sécurité ? Il y en a forcément une.</p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> La porte du registre. Elle est dans l’arrière-salle, et elle appartient à la guilde. Patte, Seuil 14 — la serrure est bonne.</p>
+    <p class="de"><span class="lance">d20 → 6</span> + Patte 3 = <b>9</b> · Seuil 14 <span class="verdict manque">manqué</span></p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Tu n’y arrives pas — et pourtant tu ressors avec. Le commis, celui que Corneille tient déjà, te la glisse dans les pattes en te regardant à peine. <strong>Tu as le fait quand même.</strong> Mais c’est lui qui te l’a donné, il te le fera payer, et la rumeur monte encore d’un cran.</p>
+
+    <aside class="apparte">
+      <p><strong>Une enquête ne se bloque jamais sur un mauvais dé.</strong> Le fait tombe dans les trois cas. Ce qui varie n’est jamais <em>si</em> vous trouvez — c’est par qui, à quel prix, et avec quel retard.</p>
+      <p>Trois portes, trois prix : une dette, un cran de rumeur, une dette <em>plus</em> un cran. La rumeur est à 2 : l’adversaire vous attend.</p>
+    </aside>
+  </section>
+
+  <!-- ===================== 2 ===================== -->
+  <section class="scene">
+    <h2><span class="scene-num">2</span> La négociation — quand on ne lance pas</h2>
+    <p class="situation">Il leur faut savoir quelle caisse est partie mardi. Trogne, sanglier, maitre des entrepôts, tient le registre des entrées.</p>
+
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Trogne ne lève pas les yeux. Il compte des sacs à voix basse, et il s’arrête quand vous arrivez sans avoir l’air content d’être interrompu. Derrière lui, le mur de racines creuses respire — vous entendez le froid dedans. <em>« Vous voulez quoi. »</em> Ce n’est pas une question.</p>
+    <p class="r r-j"><span class="qui">Corneille</span> Je lui dis la vérité : on cherche une caisse partie mardi, on ne veut d’ennuis à personne, et on préfère demander plutôt que fouiller.</p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> <em>(à la table)</em> Attention — Corneille est <strong>Parole reconnue</strong>. Ce que tu viens de dire, il n’a pas à le vérifier : ton témoignage fait foi sans qu’on t’interroge. Tu veux invoquer ta Position ?</p>
+    <p class="r r-j"><span class="qui">Corneille</span> Ça coute quoi ?</p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Rien en dette. La porte s’ouvre sans jet. Mais c’est une <strong>action publique</strong> : quatre dockers t’entendent, et la rumeur monte d’un cran. Elle est déjà à 2.</p>
+    <p class="r r-j"><span class="qui">Corneille</span> Alors non, je la garde. Je fais autrement : je lui demande son avis. Pas sur la caisse — sur le quai. Est-ce que le nouveau bordereau des guildes lui complique la vie ?</p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> <em>(un temps)</em> Il repose son crayon. Il te regarde vraiment, pour la première fois. <em>« Ça fait onze ans que je dis que ce bordereau est une idiotie. Onze ans. Personne ne m’a jamais demandé. »</em> Il parle six minutes. Vous n’avez rien d’autre à faire qu’écouter.</p>
+    <p class="r r-j"><span class="qui">Corneille</span> J’écoute vraiment. Je ne relance pas sur la caisse.</p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Ça vaut mieux que n’importe quel jet. Il finit, il souffle, et il ouvre le registre à mardi tout seul. <em>« La 40, partie à l’aube. Chargée deux fois : une fois vide sur le papier, une fois pleine sur la rampe. Je ne sais pas ce qu’il y avait dedans et je ne veux pas le savoir. »</em> Il ne demande rien en échange. Mais note-le : <strong>tu tiens une dette sur Trogne, et lui n’en tient aucune sur toi.</strong></p>
+
+    <aside class="apparte">
+      <p>Aucun dé de toute la scène. Trogne voulait qu’on lui demande son avis sur autre chose que des caisses, une fois, sincèrement — c’était écrit sur sa fiche avant qu’ils entrent.</p>
+      <p>Et la Position de Corneille aurait marché : gratuite en dette, chère en rumeur. <strong>C’est souvent le meilleur marché du jeu, à condition de savoir qu’on le passe.</strong></p>
+    </aside>
+  </section>
+
+  <!-- ===================== 3 ===================== -->
+  <section class="scene">
+    <h2><span class="scene-num">3</span> Le combat — deux tours, personne ne meurt</h2>
+    <p class="situation">Ils reviennent chercher la caisse 40. Deux Bras qu’on a payés les attendent. <a class="lien-interne" href="manuel-joueureuses.html#un-tour-joue">Le même tour est détaillé règle par règle dans le manuel</a> ; ici, c’est ce qu’on entendait à la table.</p>
+
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Trois zones : le ponton où vous êtes, les caisses, et l’eau. Une lampe-lichen éclaire les caisses — c’est là qu’ils sont tous les deux. Les caisses sont donc <strong>Proche</strong>, une zone d’écart. Ourdie, tes vibrisses ont senti le poids de leurs pieds sur les planches avant qu’ils bougent : <strong>vous commencez</strong>, sans jet d’initiative.</p>
+    <p class="r r-j"><span class="qui">Ourdie</span> J’observe celui de gauche et je nomme sa faille à voix haute. <em>Point faible</em>.</p>
+    <p class="de"><span class="lance">d20 → 8</span> + rang 3 + 2 = <b>13</b> · Défense 11 <span class="verdict court">court</span></p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Ce qui tourne mal, tout de suite : tu l’as dit à voix haute, et l’autre sait maintenant exactement où tu es. L’effet a lieu quand même — ta variante <em>Partagé</em> donne le bonus à quelqu’un d’autre.</p>
+    <p class="r r-j"><span class="qui">Ourdie</span> À Bourre. Je crie : <em>« Le genou droit, il le protège ! »</em></p>
+    <p class="r r-j"><span class="qui">Bourre</span> Je traverse — mon déplacement — et je frappe.</p>
+    <p class="de"><span class="lance">d20 → 12</span> + Poigne 3 = <b>15</b> · Défense 11 <span class="verdict court">court</span> — dégâts <span class="lance">d8 → 5</span> + <span class="lance">1d6 → 4</span> + rang 3 = <b>12</b></p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Ton épieu se plante dans une caisse : tu finis le tour à découvert, entre les deux. Et lui en avait six : il est <strong>à terre</strong>. — Le second se déplace et t’attaque, Ourdie.</p>
+    <p class="de"><span class="lance">d20 → 7</span> + 3 = <b>10</b> · Défense 13 <span class="verdict manque">manqué</span></p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Il t’a attaquée au Contact et il a raté : tu peux <strong>riposter</strong>. C’est ta réaction du tour, elle ne te coute ni action ni déplacement.</p>
+    <p class="de"><span class="lance">d20 → 15</span> + Patte 3 <em>(arme fine)</em> = <b>18</b> · Défense 11 <span class="verdict franc">franc</span> — dégâts <span class="lance">d4 → 3</span></p>
+    <p class="r r-j"><span class="qui">Ourdie</span> Le franc me donne une position : je me dégage. Et au tour suivant, j’arrache la lampe-lichen.</p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> <em>(un temps)</em> Ah. La zone passe au <strong>Noir</strong> : −3 à tout ce qui repose sur la vue. Toi tu sens par tes vibrisses, Bourre sent au nez. Lui ne voit plus rien, il saigne, il est seul, et il entend deux respirations qu’il ne peut pas situer. Il lâche la caisse. <em>« Je rentre. Je rentre, d’accord ? »</em></p>
+    <p class="r r-j"><span class="qui">Bourre</span> On le laisse partir.</p>
+
+    <aside class="apparte">
+      <p>Il voulait rentrer : il l’obtient, <strong>et le combat s’arrête là</strong>. Chaque adversaire a une ligne <em>ce qu’iel veut</em>, et la lui donner met fin au combat immédiatement, sans jet.</p>
+      <p>Deux tours. Personne n’est mort, personne n’a de marque — parce que personne n’est resté à terre.</p>
+    </aside>
+  </section>
+
+  <!-- ===================== 4 ===================== -->
+  <section class="scene">
+    <h2><span class="scene-num">4</span> Le tribunal — une réussite qui abime</h2>
+    <p class="situation">Savoir ne suffit pas : pour qu’un fait tienne, il faut un écrit, une Parole reconnue, un outil identifiable, ou un aveu public. Ils montent au troisième niveau de l’érable, devant Dame Verne.</p>
+
+    <p class="r r-mj"><span class="qui">Meneureuse</span> La lumière passe à travers le bois. Dame Verne, héronne, ne vous regarde pas — elle regarde l’écorce que vous avez posée. <em>« Vous m’affirmez qu’une semaine manque. Prouvez-le. »</em></p>
+    <p class="r r-j"><span class="qui">Corneille</span> J’interroge le commis, ici, devant elle. Ma variante : <em>Devant témoins</em>.</p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Rang 3, donc +5, contre 14 — il est terrifié, mais il a plus peur de son patron que de toi.</p>
+    <p class="de"><span class="lance">d20 → 9</span> + rang 3 + 2 = <b>14</b> · Seuil 14 <span class="verdict court">court</span></p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Tu obtiens l’aveu, il est public, et il compte : il dit devant la juge qui lui a demandé de retailler l’écorce. Un nom. — Et voilà ce qui tourne mal : <em>(un temps)</em> il dit aussi <strong>pourquoi</strong> il a accepté. Sa sœur est malade, on lui a promis des doses qu’il ne pouvait pas payer. Il pleure dans une salle pleine. Dame Verne écrit son nom, et il ne travaillera plus jamais dans cette ville.</p>
+    <p class="r r-j"><span class="qui">Corneille</span> …je ne voulais pas ça.</p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Je sais. C’est ce que fait un court : ça réussit, et ça abime quelque chose. — Dame Verne lève les yeux. <em>« Le fait est établi. »</em> Puis, plus bas, à toi : <em>« Vous êtes Parole reconnue. Une faute reste inscrite à vie chez vous, et elle est publique. Souvenez-vous que c’est vrai pour tout le monde, y compris pour ce garçon. »</em></p>
+
+    <aside class="apparte">
+      <p>Elle n’a pas raté son jet. Elle a réussi, et elle en portera quelque chose. <strong>C’est là que naissent les traits</strong> — jamais dans un choix fait à l’avance.</p>
+      <p>Et la dette contractée à la scène 1 vient de mourir avec la carrière du commis. Une dette a toujours un visage : quand le visage tombe, la dette tombe aussi.</p>
+    </aside>
+  </section>
+
+  <!-- ===================== 5 ===================== -->
+  <section class="scene">
+    <h2><span class="scene-num">5</span> Le dénouement — ce qu’on fait de ce qu’on sait</h2>
+    <p class="situation">Ils ont le nom. Reste à décider quoi en faire, et là aucune règle n’aide. C’est la meilleure scène de la soirée.</p>
+
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Vous savez qui a fait retailler le registre, et pourquoi. Vous pouvez témoigner, ou vous taire. Je ne vous demande rien : discutez.</p>
+    <p class="r r-j"><span class="qui">Bourre</span> On témoigne. Ces gens-là greffent des bêtes.</p>
+    <p class="r r-j"><span class="qui">Ourdie</span> Ou on se tait, et on tient une guilde entière par le col. <em>Un fait qu’on garde est une dette qu’on tient.</em></p>
+    <p class="r r-j"><span class="qui">Corneille</span> Sauf que moi, je ne peux pas me taire à moitié. Ma Position fait que si je parle, tout le monde saura que c’est moi. Et si je me tais et qu’on l’apprend plus tard, c’est inscrit à vie.</p>
+    <p class="r r-j"><span class="qui">Bourre</span> …d’accord. On témoigne.</p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Alors c’est public, et c’est contre un greffeur. <strong>Corneille et Bourre descendent d’un cran, à −1.</strong> Vous tenez encore le Gué, vous gardez <em>Passeur</em> — le premier écart se pardonne. Ourdie n’a rien dit publiquement : elle ne bouge pas.</p>
+
+    <aside class="apparte">
+      <p>L’Inclinaison ne bouge que sur des actes <strong>publics</strong>. Elle mesure ce qu’on sait de vous, pas ce que vous pensez.</p>
+    </aside>
+  </section>
+
+  <!-- ===================== 6 ===================== -->
+  <section class="scene">
+    <h2><span class="scene-num">6</span> Retour à quai — et la prochaine aventure s’écrit toute seule</h2>
+    <p class="situation">Personne ne lance de dés dans cette scène. C’est la seule du jeu où le groupe décide entièrement.</p>
+
+    <p class="r r-mj"><span class="qui">Meneureuse</span> La <em>Marne</em> est amarrée, il fait presque nuit, et quelqu’un a nourri les lampes avant vous. L’aventure vous rapporte <strong>un greffon</strong>. Vous avez trois emplacements vides.</p>
+    <p class="r r-j"><span class="qui">Bourre</span> Une Serre. On en a manqué trois fois.</p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Alors une Serre : entre deux aventures, vous emporterez trois doses au choix, sans que personne ait besoin de savoir distiller. — Et je lis la seconde ligne du greffon, celle que vous ne choisissez pas. <em>Ça sent. La milice s’y intéresse, l’inspection revient.</em> <strong>Voilà votre prochaine aventure. Vous venez de l’écrire vous-mêmes.</strong></p>
+    <p class="r r-j"><span class="qui">Ourdie</span> On peut refuser ?</p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Non. Vous pourrez le laisser faner plus tard — mais ce qu’il attirait reste actif une aventure entière. On arrache la Serre, la milice continue de passer.</p>
+    <p class="r r-j"><span class="qui">Corneille</span> Je change une variante, tant qu’on est à quai.</p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Gratuit, une nuit de travail. — On relit l’Inclinaison de la coque : deux à −1, une au Gué. Aucun bord ne domine, <strong>la Marne tient le Gué</strong>. Ce qui veut dire que les deux bords continuent de venir frapper, et c’est le problème. — Dernière chose. Il y a quelqu’un sur le ponton. Un rat trempé, qui attend depuis un moment sans oser monter. Il dit qu’il s’appelle Poix, qu’il décharge sur les quais, et qu’il a entendu dire que vous aviez une couchette libre. Il ne demande pas de salaire.</p>
+    <p class="r r-mj"><span class="qui">Meneureuse</span> Il demande la couchette.</p>
+
+    <aside class="apparte">
+      <p>Un greffon gagné, c’est un crochet permanent. Un acte public, c’est un cran. Le bord le plus représenté, c’est l’orientation de la Gousse — donc qui vient frapper à la coque. <strong>Rien ne se tire au sort : ça se lit sur le bateau.</strong></p>
+    </aside>
+  </section>
+
+  <section class="table-fin">
+    <h2 class="titre-section">Ce qu’on n’a pas vu</h2>
+    <p>Personne n’est mort, personne n’a pris de <a class="lien-interne" href="manuel-joueureuses.html#les-marques">marque</a> — il aurait fallu rester à terre le temps que le camp rejoue. Aucun <a class="lien-interne" href="manuel-joueureuses.html#outrepasser">Outrepasser</a>, alors qu’il en restait un à chacune. Et la rumeur n’a jamais atteint le cran 3, celui où l’adversaire sort de l’ombre et frappe le premier.</p>
+    <p>Une soirée sur deux, ça se passe autrement.</p>
+    <p class="table-liens"><a href="creation.html">Fabriquer un personnage →</a> <a href="manuel-joueureuses.html">Lire le manuel des joueureuses →</a></p>
+  </section>
+
+</main>
+
+<footer class="pied-site">
+  <p class="pied-liens"><a href="index.html">Accueil</a> · <a href="manuel-joueureuses.html">Manuel des joueureuses</a> · <a href="manuel-meneur.html">Manuel des meneureuses</a> · <a href="creation.html">Créer un personnage</a> · <a href="fiche.html">Fiche vierge</a> · <a href="licence.html">Licence</a></p>
+  <p class="pied-licence">Bas-Gué par <b>Kwigorl</b> — partagé sous <a href="licence.html">CC BY-NC-SA 4.0</a> : libre à jouer, à copier et à modifier, <strong>jamais à vendre</strong>.</p>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
