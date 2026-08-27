@@ -508,6 +508,11 @@ Pour en prendre une :
 
 *Exemple : tu as Patte 3 et Nez 3. La famille* Escamote *repose sur Patte + Nez, donc tes greffes d'Escamote seront de rang 3. Tu prends* Point faible*, variante* Partagé*. Son jet est de **+5** (rang 3 + 2).*
 
+> **Deux greffes d'une même famille, oui. Deux fois la même greffe, non.**
+> Rien ne t'empêche de porter *Prendre* **et** *Point faible*, toutes deux d'Escamote et toutes deux au même rang : c'est un choix cohérent, deux outils sur la même branche.
+> Mais une greffe ne se prend qu'une fois. Elle ne refleurirait pas deux fois dans la même scène, et ses deux variantes n'ont qu'un seul porteur — les avoir ensemble est ce que donne [[#Progression|le palier 5]], et rien d'autre.
+> Vrai à la création comme aux paliers suivants.
+
 > **Le rang plafonne à 4.** Un rang 5 demanderait deux statistiques à 5, et [[#Progression|la progression]] n'en donne qu'une. Le meilleur jet de greffe du jeu est donc **+6**.
 
 À la création, **au moins une de tes trois greffes doit être de rang 2 ou plus**.

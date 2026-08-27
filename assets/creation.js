@@ -229,13 +229,21 @@
         bloc.appendChild(el('p', 'etape-note', fam.devise));
         var choix = el('div', 'greffe-choix');
         fam.greffes.forEach(function (gr, k) {
-          var lab = el('label', 'option');
+          var ailleurs = perso.greffes.some(function (autre, j) {
+            return j !== i && autre.famille === g.famille && autre.greffe === k;
+          });
+          var lab = el('label', 'option' + (ailleurs ? ' option-prise' : ''));
           var inp = document.createElement('input');
           inp.type = 'radio'; inp.name = 'greffe-' + i; inp.value = String(k);
           inp.checked = g.greffe === k;
+          inp.disabled = ailleurs;
           inp.addEventListener('change', function () { g.greffe = k; g.variante = null; rafraichir(); });
           lab.appendChild(inp);
           lab.appendChild(el('span', 'option-nom', gr.nom));
+          if (ailleurs) {
+            lab.appendChild(el('span', 'option-detail', 'déjà prise — une greffe ne se porte qu\'une fois'));
+            lab.title = 'Tu portes déjà cette greffe. Deux greffes d\'une même famille, oui ; deux fois la même, non.';
+          }
           var f1 = el('span', 'greffe-usage');
           f1.appendChild(el('b', null, 'Au fer '));
           f1.appendChild(document.createTextNode(gr.fer));
@@ -272,6 +280,16 @@
       boite.appendChild(el('p', 'alerte',
         'Au moins une de tes trois greffes doit être de rang 2 ou plus. Là, elles sont toutes de rang 1 : elles ne vaudraient rien.'));
     }
+    var vues = {}, doublon = null;
+    choisies.forEach(function (g) {
+      var cle = g.famille + ':' + g.greffe;
+      if (vues[cle]) doublon = par(D.FAMILLES, g.famille).greffes[g.greffe].nom;
+      vues[cle] = true;
+    });
+    if (doublon) {
+      boite.appendChild(el('p', 'alerte',
+        'Tu portes deux fois ' + doublon + '. Une greffe ne se prend qu\'une fois : elle ne refleurirait pas deux fois dans la scène. Deux greffes différentes d\'une même famille, en revanche, sont un choix parfaitement valide.'));
+    }
     if (rangs.some(function (r) { return r === 1; })) {
       boite.appendChild(el('p', 'alerte',
         'Une greffe de rang 1 n’est pas interdite — elle ne vaut simplement rien. Vérifie que c’est un choix.'));
@@ -303,6 +321,13 @@
       return g.famille && g.greffe != null && g.variante != null;
     });
     if (pretes.length < 3) m.push('trois greffes avec leur variante');
+    var cles = {}, deuxfois = false;
+    pretes.forEach(function (g) {
+      var cle = g.famille + ':' + g.greffe;
+      if (cles[cle]) deuxfois = true;
+      cles[cle] = true;
+    });
+    if (deuxfois) m.push('trois greffes différentes');
     else {
       var ok = perso.greffes.some(function (g) {
         var f = par(D.FAMILLES, g.famille);

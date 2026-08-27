@@ -254,3 +254,8 @@ html[data-lampe="nuit"] .jalons a.fait{color:#101510;box-shadow:var(--halo)}
 /* garde-fous d'affichage */
 .greffe-bloc select{max-width:100%}
 .etape-fixe .etape-dit{max-width:40rem}
+
+/* une greffe déjà portée dans un autre emplacement */
+.option-prise{opacity:.45;cursor:not-allowed}
+.option-prise:hover{border-color:var(--trait)}
+.option-prise .option-detail{color:var(--ecorce)}
