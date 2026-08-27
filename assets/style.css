@@ -111,11 +111,13 @@ a:hover{color:var(--seve)}
   background:var(--vase-creuse);border:1px solid var(--trait);border-radius:50%;cursor:pointer;
   color:var(--encre-douce);transition:color .25s,box-shadow .25s,background .25s;
 }
-.lampe svg{width:1.15rem;height:1.15rem;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round}
+.lampe svg{width:1.2rem;height:1.2rem}
+.lampe .lampe-bulbe{fill:currentColor;stroke:none}
+.lampe .lampe-culot{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
 .lampe .lampe-halo{fill:none;stroke:none}
 .lampe:hover{color:var(--encre)}
 html[data-lampe="nuit"] .lampe{color:var(--lichen-vif);box-shadow:var(--halo);background:transparent}
-html[data-lampe="nuit"] .lampe .lampe-halo{fill:rgba(210,226,102,.13)}
+html[data-lampe="nuit"] .lampe .lampe-halo{fill:rgba(210,226,102,.14)}
 
 .bouton-sommaire{display:none;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
   background:none;border:1px solid var(--trait-fort);border-radius:var(--rayon);color:var(--encre);padding:.4rem .6rem;cursor:pointer}
