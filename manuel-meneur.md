@@ -10,7 +10,7 @@ tags:
 
 # Bas-Gué — Manuel des meneureuses
 
-*Ce manuel suppose le [[Bas-Gué — Manuel des joueureuses|Manuel des joueureuses]] connu. Il ne répète aucune règle : il dit comment s'en servir.*
+*Ce manuel suppose le [[Bas-Gué — Manuel des joueureuses|Manuel des joueureuses]] connu. Il ne réexplique aucune règle en détail — sauf dans son [[#VIII. Aide-mémoire de lae meneureuse|aide-mémoire]], qui les résume pour la table. Ce manuel dit surtout comment s'en servir.*
 
 > [!abstract]+ Sommaire
 > **[[#I. Mener Bas-Gué]]**
@@ -469,7 +469,7 @@ Par aventure, compte :
 
 ### Les comparses lâchent
 
-**Quand la moitié d'une bande est à terre, le reste s'arrête** — iel fuit, iel se rend, ou iel négocie. Aucun jet.
+**Quand la moitié ou plus d'une bande est à terre, le reste s'arrête** — iel fuit, iel se rend, ou iel négocie. Aucun jet. *(Trois adversaires : ça se déclenche dès le premier à terre.)*
 
 ## Doser une rencontre
 

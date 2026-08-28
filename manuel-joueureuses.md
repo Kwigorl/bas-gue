@@ -170,7 +170,7 @@ Tout ce qui suit s'additionne, en positif comme en négatif :
 | Ta [[#2. Ton corps\|morphologie]] et ton [[#2. Ton corps\|gabarit]] | *Grimpeur* : +3 pour grimper |
 | Ton [[#3. Ton sens\|Sens]] | *Nez de limier* : +3 pour flairer, −3 dans les spores |
 | Ta [[#4. Ta position\|Position]] | *Gens de terriers* : −2 pour te faire écouter par qui a des moyens |
-| Tes [[#Les traits\|traits]] et tes [[#Les marques\|marques]] | *Genou brisé* : +2 pour choisir un terrain |
+| Tes [[#Les traits\|traits]] et tes [[#Les marques\|marques]] | *Genou brisé* : +2 pour repérer d'avance un lieu de rendez-vous |
 | La [[#Les surfaces vivantes\|surface]] où tu te trouves | Le **Noir** : −3 à tout ce qui repose sur la vue |
 | L'état où tu es | Désorienté·e, ébloui·e, entravé·e : −2 |
 
@@ -574,7 +574,7 @@ Porter une greffe est banal : c'est ainsi qu'on apprend un métier, et tout le m
 **Au bord —** tu la verses dans une surface.
 
 **Rebond**
-**Au fer —** tu te déplaces d'une zone supplémentaire, et ton attaque de ce tour **ignore tout bonus de Défense** : Cuirasse, *Étai*, *Greffe de fortune*, couvert. Tu frappes le 10 + Patte.
+**Au fer —** tu te déplaces d'une zone supplémentaire, et ton attaque de ce tour **ignore les bonus de Défense de ta cible** : Cuirasse, *Étai*, *Greffe de fortune*, couvert. Tu frappes son 10 + Patte de base.
 **Au calme —** tu franchis un obstacle vertical sans jet.
 *Une variante, au choix :*
 **Ricochet —** tu traverses une zone tenue par des ennemi·es sans être arrêté.
@@ -937,7 +937,7 @@ Genou brisé, oreille arrachée, œil perdu, échine raide. Lae joueureuse chois
 Une marque a une face, mais **étroite**, et une ombre **large**.
 
 > **Œil perdu.** +2 pour tenir bon face à ce qui devrait t'effrayer. −2 à tout ce qui demande d'apprécier une distance.
-> **Genou brisé.** +2 pour choisir un terrain, un chemin, un moment. Tu ne peux plus **te précipiter**.
+> **Genou brisé.** +2 pour repérer d'avance un lieu de rendez-vous, un abri, ou pour arriver le premier quelque part. Tu ne peux plus **te précipiter**.
 > **Échine raide.** +2 en interrogatoire et en négociation avec qui a mal. −2 Défense contre tout ce qui vient d'en haut ou de derrière.
 
 **À la troisième marque**, le personnage se retire de la vie active ou meurt à la fin de l'aventure en cours. Lae joueureuse choisit. Un personnage retiré reste à la Gousse et devient une recrue.
@@ -1163,7 +1163,7 @@ Ce qu'il donne : un **dé de dégâts**, une **permission** — tu peux faire un
 | **Naturelle** — griffes, crocs, bec | d4 | Tu n'es jamais désarmé·e, on ne peut pas te la confisquer. | Rien de plus que ta morphologie. |
 | **Fine** — lame courte, alêne, faucille | d4 | Se dissimule. Se lance à Proche. Frappe avec **Patte** au Contact. | — |
 | **Courante** — gourdin, hachette, croc de docker | d6 | La norme. | On voit que tu es armé : **−2** pour passer pour inoffensif. |
-| **Lourde** — masse, faux, épieu, rame ferrée | d8 | Tu frappes au Contact **et** à Proche sans bouger. | Deux pattes prises : tu ne peux ni grimper, ni porter, ni ouvrir. **−2** à la discrétion. |
+| **Lourde** — masse, faux, épieu, rame ferrée | d8 | Tu frappes au Contact **et** à Proche sans bouger. | **En main**, prête à frapper : deux pattes prises, tu ne grimpes pas, tu ne portes pas, tu n'ouvres pas. **Rangée** — fourreau, sangle, dos — tes pattes se libèrent, mais elle n'est plus prête : il te faut un instant pour la ressortir. **−2** à la discrétion dans les deux cas : elle se voit, sortie ou non. |
 | **De jet** — fronde, harpon, dard | d6 | Frappe à **Loin**. | Il faut récupérer le projectile ou en refaire un. Après trois tirs, tu n'en as plus. |
 
 ## L'armure
