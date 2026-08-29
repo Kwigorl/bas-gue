@@ -29,3 +29,19 @@ sont mis à disposition selon les termes de la licence
 === USAGE COMMERCIAL ===
 L'auteur conserve l'intégralité de ses droits et peut accorder, au cas par cas,
 une licence commerciale. Pour toute demande : https://github.com/Kwigorl/bas-gue
+
+--------------------------------------------------------------------------
+NOTE POUR L'AUTEUR — à supprimer une fois fait.
+
+Ce fichier désigne les licences sans en reproduire le texte intégral. C'est
+suffisant pour informer, mais l'usage est d'inclure le texte complet. Pour le
+faire, depuis ce dossier :
+
+    curl -o LICENSE-CONTENU https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt
+    curl -o LICENSE-CODE https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Noncommercial-1.0.0.txt
+
+puis garde ce fichier LICENSE comme sommaire renvoyant aux deux autres.
+
+GitHub ne reconnait pas les licences non commerciales dans son encadré
+"About" : le dépôt affichera "View license" au lieu du nom. C'est normal.
+--------------------------------------------------------------------------

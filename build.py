@@ -179,7 +179,7 @@ def render_block_lines(lines, doc):
             sl = doc.anchors.get(txt, slug(txt))
             mn = re.match(r"^([IVXLC]+|\d+)\.\s+(.*)$", txt)
             if mn and lvl <= 2:
-                interieur = ('<span class="chiffre">%s</span><span class="intitule">%s</span>'
+                interieur = ('<span class="chiffre">%s</span> <span class="intitule">%s</span>'
                              % (esc(mn.group(1)), inline(mn.group(2), doc)))
                 cls = " titre-chiffre"
             else:
@@ -193,6 +193,14 @@ def render_block_lines(lines, doc):
             continue
         if re.match(r"^-{3,}$", s):
             out.append('<hr class="separateur">')
+            i += 1
+            continue
+        # une image seule sur sa ligne : bloc à part entière, jamais dans un <p>
+        # (un <figure><svg> imbriqué dans un <p> est un HTML invalide, que les
+        # navigateurs tolèrent silencieusement mais qu'un lecteur epub refuse)
+        mi = re.match(r"^!\[\[([^\]]+)\]\]$", s)
+        if mi:
+            out.append("\x00IMG:%s\x00" % mi.group(1))
             i += 1
             continue
         # callout

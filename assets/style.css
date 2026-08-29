@@ -178,7 +178,7 @@ h4{font-size:.98rem;margin:1.5rem 0 .4rem;color:var(--encre-douce)}
 h1 .chiffre,h2 .chiffre{
   font-family:var(--mono);font-weight:500;
   color:var(--lichen);letter-spacing:.02em;
-  font-size:.52em;vertical-align:.28em;margin-right:.6em;
+  font-size:.52em;vertical-align:.28em;margin-right:.35em;
 }
 @media (min-width:1240px){
   .titre-chiffre.titre-n1 .chiffre{
