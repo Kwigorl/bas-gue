@@ -448,7 +448,7 @@ Tu n'as **pas** de plastron d'écorce : il s'obtient en jouant.
 | **5. Statistiques** | **Poigne 1 · Patte 3 · Nez 3 · Sève 2 · Verbe 2** |
 | **Valeurs dérivées** | **PV 10** *(8 + 1×2)* · **Défense 13** *(10 + 3)* · **Récupération 4** *(Sève 2 + 2)* |
 
-### 6. Ses trois greffes
+### Ses trois greffes
 
 | Greffe | Famille | Le rang se calcule ainsi | Jet | Variante |
 |---|---|---|---|---|
@@ -459,7 +459,7 @@ Tu n'as **pas** de plastron d'écorce : il s'obtient en jouant.
 > **Ce que sa Poigne 1 lui coute.** Les quatre familles qui reposent sur la Poigne — *Prise*, *Traque*, *Souche*, *Ascendant* — seraient toutes de **rang 1** chez elle. Elles ne sont pas interdites : elles ne valent simplement rien.
 > **Ton 1 ferme quatre familles sur dix.** C'est le vrai poids de l'étape 5.
 
-### 7 à 10
+### Le reste de la fiche (7 à 10)
 
 **Ce qu'elle porte —** une **[[#Les armes|arme fine]]** *(d4, se dissimule, frappe avec Patte)* · un **[[#Les outils vivants|fil de sève]]** *(une corde qui s'accroche seule — mais qui retient l'odeur de tout ce qu'elle a tenu)* · et ce que son accès de Position couvre : des vêtements de travail, et les outils de qui se fait embaucher partout.
 
