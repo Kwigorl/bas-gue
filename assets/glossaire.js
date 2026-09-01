@@ -8,6 +8,7 @@
    où il n'y a qu'un tap et pas de survol. */
 (function () {
   'use strict';
+  var VERSION = 'glossaire v3 — liens protégés';
   var DONNEES = window.BG_GLOSSAIRE;
   if (!DONNEES) return;
   var corps = document.querySelector('.corps');
@@ -82,6 +83,10 @@
   function brancherDeclencheur(el, entree) {
     el.setAttribute('aria-expanded', 'false');
     el.addEventListener('click', function (e) {
+      // garde-fou : si par un enchevêtrement imprévu ce déclencheur se trouve
+      // être un lien ou en contenir un, la navigation passe toujours avant
+      // l'infobulle. Mieux vaut une infobulle qui ne s'ouvre pas qu'un lien mort.
+      if (el.tagName === 'A' || el.closest('a') || el.querySelector('a')) return;
       e.preventDefault();
       e.stopPropagation();
       ouvrir(el, entree);
@@ -107,10 +112,15 @@
     var entree = chercher(texte);
     if (!entree) return;
 
-    var lien = fort.closest('a');
+    var lien = fort.closest('a') || fort.querySelector('a');
     if (lien) {
       // mot déjà lié : on ne touche pas au lien, on ajoute un ⓘ à côté,
       // visible surtout là où il n'y a pas de survol pour peek avant de cliquer.
+      // (le lien peut être un ancêtre du gras — <a><strong>mot</strong></a> —
+      // ou, tout aussi souvent ici, l'inverse — <strong><a>mot</a></strong> :
+      // dans les deux cas, on s'accroche juste après le <a> lui-même, jamais
+      // sur le <strong>, pour ne jamais intercepter le clic du lien.)
+      fort.dataset.termeFait = '1';
       if (lien.nextElementSibling && lien.nextElementSibling.classList &&
           lien.nextElementSibling.classList.contains('terme-info')) return;
       var bouton = document.createElement('button');
@@ -156,4 +166,12 @@
   });
   window.addEventListener('scroll', fermer, { passive: true });
   window.addEventListener('resize', fermer);
+
+  // permet de vérifier d'un coup d'œil, dans la console du navigateur,
+  // quelle version du script tourne réellement sur le site en ligne.
+  if (window.console && console.info) {
+    console.info('Bas-Gué — ' + VERSION + ' — ' +
+      document.querySelectorAll('.terme-info').length + ' bouton(s) \u24D8, ' +
+      document.querySelectorAll('.terme').length + ' mot(s) annoté(s).');
+  }
 })();
