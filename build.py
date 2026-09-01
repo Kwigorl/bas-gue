@@ -46,6 +46,8 @@ class Doc:
         self.raw = re.sub(r"^---\n.*?\n---\n", "", self.raw, flags=re.S)
         self.headings = []  # (level, text, slug)
         self.anchors = {}   # texte brut d'ancre -> slug
+        self.glossaire_ordre = []  # rempli dans main(), une fois le glossaire extrait
+        self.glossaire_vu = set()  # termes déjà marqués depuis le dernier chapitre (h1)
 
 
 def verifier_pipes(doc):
@@ -112,6 +114,48 @@ def extraire_glossaire(doc):
     return glossaire
 
 
+# noms propres : le lecteur les comprend dès la première page, inutile de les
+# redéfinir à chaque chapitre.
+EXCLUS_PREMIERE_OCCURRENCE = {"Bas-Gué", "Vasque"}
+
+MOTIF_PROTEGE = re.compile(
+    r"\*\*.+?\*\*|\*[^*\n]+?\*|\[\[.+?\]\]|\x00TERME:[^\x00]+\x00[^\x00]*\x00/TERME\x00")
+
+
+def marquer_premiere_occurrence(texte, doc):
+    """Marque, au plus une fois par grand chapitre (titre de niveau 1), la
+    première occurrence en toutes lettres — capitalisée, hors gras, hors
+    wikilink — d'un terme du glossaire dans du texte courant. `doc.glossaire_vu`
+    est remis à zéro à chaque nouveau chapitre (voir render_block_lines)."""
+    if not doc.glossaire_ordre:
+        return texte
+    for terme in doc.glossaire_ordre:
+        if terme in doc.glossaire_vu:
+            continue
+        segments, dernier = [], 0
+        for m in MOTIF_PROTEGE.finditer(texte):
+            segments.append((dernier, m.start()))
+            dernier = m.end()
+        segments.append((dernier, len(texte)))
+
+        base = re.sub(r"^(L['’])", "", terme).split(" · ")[0]
+        motif = re.compile(r"(?<![\wÀ-ÿ])" + re.escape(base) + r"s?(?![\wÀ-ÿ])")
+        trouve = None
+        for (a, b) in segments:
+            cand = motif.search(texte, a, b)
+            if cand:
+                trouve = cand
+                break
+        if not trouve:
+            continue
+        doc.glossaire_vu.add(terme)
+        mot = texte[trouve.start():trouve.end()]
+        texte = (texte[:trouve.start()]
+                 + "\x00TERME:%s\x00%s\x00/TERME\x00" % (terme, mot)
+                 + texte[trouve.end():])
+    return texte
+
+
 DOCS = {}
 
 
@@ -170,6 +214,13 @@ def inline(text, doc):
             else:
                 morceaux.append(ch)
         text = "".join(morceaux)
+    # première occurrence marquée par marquer_premiere_occurrence(), convertie
+    # en un vrai déclencheur d'infobulle — le même système que celui posé à
+    # l'exécution sur le gras (assets/glossaire.js reconnaît [data-terme]).
+    text = re.sub(
+        r"\x00TERME:([^\x00]+)\x00([^\x00]*)\x00/TERME\x00",
+        lambda m: '<span class="terme" data-terme="%s">%s</span>' % (m.group(1), m.group(2)),
+        text)
     text = text.replace("\\|", "|")
     return text
 
@@ -215,6 +266,8 @@ def render_block_lines(lines, doc):
         m = re.match(r"^(#{1,4})\s+(.*)$", s)
         if m:
             lvl, txt = len(m.group(1)), m.group(2).strip()
+            if lvl == 1:
+                doc.glossaire_vu = set()  # nouveau chapitre : on peut redéfinir
             sl = doc.anchors.get(txt, slug(txt))
             mn = re.match(r"^([IVXLC]+|\d+)\.\s+(.*)$", txt)
             if mn and lvl <= 2:
@@ -280,14 +333,16 @@ def render_block_lines(lines, doc):
             while i < n and re.match(r"^\s*[-*]\s+", lines[i]):
                 items.append(re.sub(r"^\s*[-*]\s+", "", lines[i]).strip())
                 i += 1
-            out.append("<ul>" + "".join("<li>%s</li>" % inline(x, doc) for x in items) + "</ul>")
+            out.append("<ul>" + "".join(
+                "<li>%s</li>" % inline(marquer_premiere_occurrence(x, doc), doc) for x in items) + "</ul>")
             continue
         if re.match(r"^\d+\.\s+", s):
             items = []
             while i < n and re.match(r"^\s*\d+\.\s+", lines[i]):
                 items.append(re.sub(r"^\s*\d+\.\s+", "", lines[i]).strip())
                 i += 1
-            out.append("<ol>" + "".join("<li>%s</li>" % inline(x, doc) for x in items) + "</ol>")
+            out.append("<ol>" + "".join(
+                "<li>%s</li>" % inline(marquer_premiere_occurrence(x, doc), doc) for x in items) + "</ol>")
             continue
         # paragraphe (les sauts de ligne simples sont significatifs dans ces manuels)
         para = []
@@ -295,7 +350,7 @@ def render_block_lines(lines, doc):
                 r"^\s*(#{1,4}\s|>|\||-{3,}$|[-*]\s|\d+\.\s)", lines[i]):
             para.append(lines[i].strip())
             i += 1
-        txt = "<br>\n".join(inline(p, doc) for p in para)
+        txt = "<br>\n".join(inline(marquer_premiere_occurrence(p, doc), doc) for p in para)
         out.append("<p>%s</p>" % txt)
     return "\n".join(out)
 
@@ -353,6 +408,13 @@ def main():
         "(Vocabulaire) du manuel des joueureuses. Ne pas éditer à la main.\n"
         "window.BG_GLOSSAIRE = " + json.dumps(glossaire, ensure_ascii=False, indent=1) + ";\n")
     print("écrit assets/glossaire-data.js,", len(glossaire), "termes")
+
+    # première occurrence non grasse par chapitre : voir marquer_premiere_occurrence.
+    # Bas-Gué et Vasque en sont exclus — des noms propres qu'on ne redéfinit pas
+    # à chaque chapitre.
+    ordre = [t for t in glossaire if t not in EXCLUS_PREMIERE_OCCURRENCE]
+    for d in DOCS.values():
+        d.glossaire_ordre = ordre
 
     for d in DOCS.values():
         h = page(d, tpl)

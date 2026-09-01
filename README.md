@@ -100,9 +100,17 @@ Sur les deux pages de manuel, les mots du chapitre II (Vocabulaire) reçoivent u
 
 **Le piège du tiret final.** Les greffes s'écrivent `**Au fer —** …`, et le glossaire doit reconnaitre `Au fer` malgré le tiret. Mais les fiches d'adversaire du manuel des meneureuses écrivent aussi `**Fait —** il consigne.` — un tiret qui ne veut rien dire de spécial, sur un mot qui collisionne avec le terme de glossaire *Fait* (une preuve d'enquête). Le tiret final n'est donc toléré que pour les deux termes qui l'emploient réellement ainsi (`au fer`, `au calme`) ; ailleurs, un mot suivi d'un tiret ne matche rien. Si tu ajoutes un jour un nouveau terme au vocabulaire qui s'écrit lui aussi avec un tiret dans le texte courant, ajoute-le à `TOLERE_TIRET` en haut de `assets/glossaire.js`.
 
-**Mobile.** Pas de survol sur un écran tactile : taper un mot en gras ouvre l'infobulle, taper ailleurs la referme. Sur un mot déjà lié, le tap sur le mot navigue normalement — c'est le petit **ⓘ**, une cible séparée, qui ouvre l'infobulle.
+**Le gras peut envelopper le lien, ou l'inverse.** Le générateur produit tantôt `<a><strong>mot</strong></a>`, tantôt `<strong><a>mot</a></strong>` — selon que le wikilink ou le gras a été écrit en premier dans le `.md`. Le script cherche le lien **dans les deux sens** (`closest('a')` puis `querySelector('a')`) avant de décider s'il pose un mot cliquable ou un bouton ⓘ. Ne cherche jamais le lien dans un seul sens : c'est exactement ce qui a cassé deux liens (*Outrepasser*, *Un outil vivant*) la première fois — ils ouvraient l'infobulle au lieu de naviguer.
+
+**Le ⓘ n'existe qu'au tactile.** Un mot qui est à la fois un terme et un lien ne pose un conflit que là où *taper* est le seul geste disponible : le **ⓘ** sert alors de seconde cible, pour que le tap sur le mot continue de naviguer. À la souris, survoler et cliquer sont deux gestes distincts — le script ne crée donc aucun bouton, branche la définition sur le **survol** du lien, et n'intercepte jamais le clic. C'est aussi le sens du garde-fou dans `brancherDeclencheur` : si un déclencheur se trouve malgré tout être un lien ou en contenir un, la navigation passe toujours avant l'infobulle.
 
 Après toute modification du chapitre Vocabulaire, `python3 build.py` régénère `glossaire-data.js` tout seul ; rien d'autre à toucher.
+
+**Au-delà du gras : une occurrence par chapitre.** Le gras seul ratait beaucoup de vraies occurrences — un mot du glossaire écrit en toutes lettres, capitalisé, jamais mis en valeur. `build.py` en marque désormais **une par grand chapitre (titre de niveau 1)**, dans le texte courant uniquement (jamais dans un tableau, un titre, un gras déjà traité, une italique — une italique nomme presque toujours un élément de règle précis, *Étai*, *Point faible*, et couper le mot en deux dedans serait moche). La fonction `marquer_premiere_occurrence()` fait ce travail, et `doc.glossaire_vu` se remet à zéro à chaque nouveau chapitre.
+
+Deux noms propres en sont exclus — `EXCLUS_PREMIERE_OCCURRENCE` en tête de fichier — **Bas-Gué** et **Vasque** : le lecteur les comprend dès la première page, inutile de les redéfinir à chaque chapitre.
+
+Ce marquage ne dépend d'aucune nouvelle logique côté navigateur : il produit directement `<span class="terme" data-terme="Nom">mot</span>`, que `assets/glossaire.js` reconnaissait déjà (c'est le même mécanisme que les marquages à la main de `table.html`).
 
 ## Convention d’écriture
 
