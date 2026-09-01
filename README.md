@@ -89,6 +89,21 @@ Le contributeur ou la contributrice ne cède rien : iel garde ses droits, et n�
 
 **Ton nom apparait à trois endroits** — `LICENSE`, `licence.html` et le pied de page — sous la forme `Kwigorl`. Remplace-le si tu veux signer autrement, et ajoute une adresse de contact dans `licence.html` si tu ne veux pas passer par les *issues* du dépôt.
 
+## Les infobulles de vocabulaire
+
+Sur les deux pages de manuel, les mots du chapitre II (Vocabulaire) reçoivent une infobulle partout où ils réapparaissent dans le texte courant. Toute la mécanique tient en trois fichiers, générés puis exécutés :
+
+- **`build.py`** extrait les deux tables « Les mots du jeu » et « Les mots du monde » du `.md` source et écrit **`assets/glossaire-data.js`** — ne le modifie jamais à la main, il est régénéré à chaque build.
+- **`assets/glossaire.js`** parcourt `.corps` au chargement de la page et pose une infobulle sur chaque mot qui correspond.
+
+**Ce qu'il touche, et pourquoi seulement ça.** Le script ne réagit qu'aux mots déjà en **gras** dans le texte courant — jamais dans un tableau, jamais dans un titre. C'est volontaire : la moitié du vocabulaire (*Fait, Porte, Trait, Franc, Court…*) est aussi du français ordinaire, et seul le gras dit sans ambigüité que le mot est employé au sens du jeu. Un mot en gras déjà **lié** (beaucoup le sont) n'est pas transformé : un petit **ⓘ** est ajouté à côté, pour ne jamais gêner la navigation.
+
+**Le piège du tiret final.** Les greffes s'écrivent `**Au fer —** …`, et le glossaire doit reconnaitre `Au fer` malgré le tiret. Mais les fiches d'adversaire du manuel des meneureuses écrivent aussi `**Fait —** il consigne.` — un tiret qui ne veut rien dire de spécial, sur un mot qui collisionne avec le terme de glossaire *Fait* (une preuve d'enquête). Le tiret final n'est donc toléré que pour les deux termes qui l'emploient réellement ainsi (`au fer`, `au calme`) ; ailleurs, un mot suivi d'un tiret ne matche rien. Si tu ajoutes un jour un nouveau terme au vocabulaire qui s'écrit lui aussi avec un tiret dans le texte courant, ajoute-le à `TOLERE_TIRET` en haut de `assets/glossaire.js`.
+
+**Mobile.** Pas de survol sur un écran tactile : taper un mot en gras ouvre l'infobulle, taper ailleurs la referme. Sur un mot déjà lié, le tap sur le mot navigue normalement — c'est le petit **ⓘ**, une cible séparée, qui ouvre l'infobulle.
+
+Après toute modification du chapitre Vocabulaire, `python3 build.py` régénère `glossaire-data.js` tout seul ; rien d'autre à toucher.
+
 ## Convention d’écriture
 
 Tout le site suit deux règles, à respecter pour toute modification future.

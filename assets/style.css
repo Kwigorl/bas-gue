@@ -380,3 +380,41 @@ html[data-lampe="nuit"] .carte .pastille-forte{filter:drop-shadow(0 0 8px rgba(2
 
 /* pas de mot esseulé sur la dernière ligne */
 .pied-licence,.pied-liens{text-wrap:balance}
+
+/* ---------- infobulles de vocabulaire ---------- */
+.terme{
+  cursor:help;text-decoration:underline;text-decoration-style:dotted;
+  text-decoration-color:var(--lichen);text-underline-offset:.2em;
+  text-decoration-thickness:1px;border-radius:2px;
+}
+.terme:hover,.terme:focus-visible,.terme[aria-expanded="true"]{
+  background:var(--vase-creuse);outline:none;
+}
+.terme-info{
+  display:inline-grid;place-items:center;
+  width:1.05rem;height:1.05rem;margin-left:.15rem;vertical-align:.05em;
+  font-size:.62rem;line-height:1;
+  background:none;border:1px solid var(--trait-fort);border-radius:50%;
+  color:var(--encre-douce);cursor:pointer;padding:0;
+}
+.terme-info:hover,.terme-info[aria-expanded="true"]{color:var(--lichen);border-color:var(--lichen)}
+/* sur un vrai écran de souris, le survol du lien suffit à faire apparaitre
+   le ⓘ : on ne l'affiche en permanence que là où il n'y a pas de survol */
+@media (hover:hover) and (pointer:fine){
+  .terme-info{opacity:0;transition:opacity .15s}
+  a:hover + .terme-info,.terme-info:hover,.terme-info:focus-visible,.terme-info[aria-expanded="true"]{opacity:1}
+}
+
+.bulle-terme{
+  position:absolute;z-index:60;max-width:19rem;
+  background:var(--vase);border:1px solid var(--trait-fort);
+  border-top:2px solid var(--lichen);border-radius:var(--rayon);
+  box-shadow:var(--papier-ombre);
+  padding:.65rem .8rem;font-size:.86rem;line-height:1.5;
+}
+.bulle-terme-nom{
+  margin:0 0 .3rem;font-family:var(--mono);font-size:.62rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--lichen);
+}
+.bulle-terme-def{margin:0;color:var(--encre)}
+.bulle-terme-def a{text-decoration:underline}

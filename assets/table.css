@@ -115,3 +115,7 @@
   .r-j .qui{left:0;padding-left:0}
   .de,.apparte{margin-left:0}
 }
+
+/* un badge de résultat (franc/court/manqué) a déjà sa propre bordure
+   colorée : le soulignement pointillé du glossaire ferait doublon */
+.verdict.terme{text-decoration:none;cursor:help}

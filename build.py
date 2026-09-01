@@ -73,6 +73,45 @@ def collect_headings(doc):
             doc.anchors[txt.lower()] = s
 
 
+def extraire_glossaire(doc):
+    """Isole les tables « Les mots du jeu » et « Les mots du monde » du chapitre II
+    et les transforme en un dictionnaire terme -> définition, pour les infobulles."""
+    t = doc.raw
+    debut = t.find("## Les mots du jeu")
+    fin = t.find("## Ne pas confondre")
+    assert debut != -1 and fin != -1, "chapitre Vocabulaire introuvable"
+    bloc = t[debut:fin]
+
+    def cells(ligne):
+        s = ligne.strip()
+        if s.startswith("|"):
+            s = s[1:]
+        if s.endswith("|"):
+            s = s[:-1]
+        return [p.strip() for p in re.split(r"(?<!\\)\|", s)]
+
+    glossaire = {}
+    for ligne in bloc.split("\n"):
+        s = ligne.strip()
+        if not s.startswith("|") or re.match(r"^\|[\s:-]+\|", s):
+            continue
+        parts = cells(s)
+        if len(parts) != 2 or parts[0] in ("Terme", ""):
+            continue
+        terme_brut, def_brut = parts
+        terme_brut = re.sub(r"^\*\*|\*\*$", "", terme_brut.strip())
+        if not terme_brut or terme_brut == "Terme":
+            continue
+        def_html = inline(def_brut, doc)
+        # les liens internes d'une définition doivent rester valides même
+        # affichés depuis l'autre manuel : on les rend absolus.
+        def_html = def_html.replace('href="#', 'href="manuel-joueureuses.html#')
+        for sous_terme in [x.strip() for x in terme_brut.split(" · ")]:
+            if sous_terme:
+                glossaire[sous_terme] = def_html
+    return glossaire
+
+
 DOCS = {}
 
 
@@ -307,6 +346,14 @@ def main():
     for d in DOCS.values():
         verifier_pipes(d)
         collect_headings(d)
+
+    glossaire = extraire_glossaire(DOCS["joueureuses"])
+    io.open("assets/glossaire-data.js", "w", encoding="utf-8").write(
+        "// Généré automatiquement par build.py depuis le chapitre II "
+        "(Vocabulaire) du manuel des joueureuses. Ne pas éditer à la main.\n"
+        "window.BG_GLOSSAIRE = " + json.dumps(glossaire, ensure_ascii=False, indent=1) + ";\n")
+    print("écrit assets/glossaire-data.js,", len(glossaire), "termes")
+
     for d in DOCS.values():
         h = page(d, tpl)
         h = re.sub(r"\{\{NAV_ACTIVE_\w+\}\}", "", h)
