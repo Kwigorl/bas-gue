@@ -8,7 +8,7 @@
    où il n'y a qu'un tap et pas de survol. */
 (function () {
   'use strict';
-  var VERSION = 'glossaire v3 — liens protégés';
+  var VERSION = 'glossaire v4 — ⓘ tactile seulement';
   var DONNEES = window.BG_GLOSSAIRE;
   if (!DONNEES) return;
   var corps = document.querySelector('.corps');
@@ -80,6 +80,16 @@
   var surAppareilTactile = !(window.matchMedia &&
     window.matchMedia('(hover: hover) and (pointer: fine)').matches);
 
+  /* Sur un lien, à la souris uniquement : le survol montre la définition,
+     le clic navigue. Aucun gestionnaire de clic, donc aucun risque de
+     lien mort — et aucun bouton à afficher. */
+  function brancherSurvolSeul(lien, entree) {
+    lien.addEventListener('mouseenter', function () { ouvrir(lien, entree); });
+    lien.addEventListener('mouseleave', fermer);
+    lien.addEventListener('focus', function () { ouvrir(lien, entree); });
+    lien.addEventListener('blur', fermer);
+  }
+
   function brancherDeclencheur(el, entree) {
     el.setAttribute('aria-expanded', 'false');
     el.addEventListener('click', function (e) {
@@ -114,13 +124,17 @@
 
     var lien = fort.closest('a') || fort.querySelector('a');
     if (lien) {
-      // mot déjà lié : on ne touche pas au lien, on ajoute un ⓘ à côté,
-      // visible surtout là où il n'y a pas de survol pour peek avant de cliquer.
-      // (le lien peut être un ancêtre du gras — <a><strong>mot</strong></a> —
-      // ou, tout aussi souvent ici, l'inverse — <strong><a>mot</a></strong> :
-      // dans les deux cas, on s'accroche juste après le <a> lui-même, jamais
-      // sur le <strong>, pour ne jamais intercepter le clic du lien.)
+      // Mot à la fois terme et lien. Deux ergonomies, selon l'appareil :
+      //  – au doigt, un seul geste possible : on ajoute un ⓘ à côté, cible
+      //    séparée, pour que le tap sur le mot continue de naviguer ;
+      //  – à la souris, survoler et cliquer sont deux gestes distincts : aucun
+      //    bouton n'est nécessaire, le survol du lien suffit à montrer la
+      //    définition et le clic navigue normalement.
       fort.dataset.termeFait = '1';
+      if (!surAppareilTactile) {
+        brancherSurvolSeul(lien, entree);
+        return;
+      }
       if (lien.nextElementSibling && lien.nextElementSibling.classList &&
           lien.nextElementSibling.classList.contains('terme-info')) return;
       var bouton = document.createElement('button');
@@ -150,11 +164,23 @@
       : null;
     if (!entree) return;
     el.dataset.termeFait = '1';
-    if (!el.classList.contains('terme-info')) {
-      el.classList.add('terme');
-      el.tabIndex = 0;
-      el.setAttribute('role', 'button');
+
+    // un ⓘ écrit en dur dans la page n'a de sens qu'au doigt : à la souris,
+    // on le retire et on rebranche la définition sur le lien qui le précède.
+    if (el.classList.contains('terme-info')) {
+      var lienPrecedent = el.previousElementSibling;
+      if (!surAppareilTactile && lienPrecedent && lienPrecedent.tagName === 'A') {
+        el.remove();
+        brancherSurvolSeul(lienPrecedent, entree);
+        return;
+      }
+      brancherDeclencheur(el, entree);
+      return;
     }
+
+    el.classList.add('terme');
+    el.tabIndex = 0;
+    el.setAttribute('role', 'button');
     brancherDeclencheur(el, entree);
   });
 

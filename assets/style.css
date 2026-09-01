@@ -398,11 +398,12 @@ html[data-lampe="nuit"] .carte .pastille-forte{filter:drop-shadow(0 0 8px rgba(2
   color:var(--encre-douce);cursor:pointer;padding:0;
 }
 .terme-info:hover,.terme-info[aria-expanded="true"]{color:var(--lichen);border-color:var(--lichen)}
-/* sur un vrai écran de souris, le survol du lien suffit à faire apparaitre
-   le ⓘ : on ne l'affiche en permanence que là où il n'y a pas de survol */
+/* le ⓘ n'existe que pour les appareils tactiles, où survol et clic sont le
+   même geste. À la souris, le script le retire et branche la définition sur
+   le survol du lien ; cette règle est une ceinture de sécurité au cas où un
+   ⓘ écrit en dur dans une page subsisterait. */
 @media (hover:hover) and (pointer:fine){
-  .terme-info{opacity:0;transition:opacity .15s}
-  a:hover + .terme-info,.terme-info:hover,.terme-info:focus-visible,.terme-info[aria-expanded="true"]{opacity:1}
+  .terme-info{display:none}
 }
 
 .bulle-terme{
