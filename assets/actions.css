@@ -1,0 +1,107 @@
+/* Bas-Gué — la fiche d'actions : une carte, pas un manuel */
+
+.mode-emploi{max-width:44rem;margin:0 auto;padding:2.2rem clamp(1rem,4vw,2rem) 1.2rem}
+.mode-emploi h1{
+  font-family:var(--titre);font-size:clamp(1.9rem,4.5vw,2.6rem);font-weight:700;margin:0 0 .5rem;
+  font-variation-settings:"SOFT" 46,"WONK" 1,"opsz" 120;
+}
+.mode-emploi p{color:var(--encre-douce);margin:0;max-width:38rem}
+.bouton-imprimer{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;
+  background:var(--encre);color:var(--vase);border:1px solid var(--encre);
+  border-radius:var(--rayon);padding:.45rem .8rem;cursor:pointer;
+}
+.bouton-imprimer:hover{background:var(--seve);border-color:var(--seve)}
+
+.carte-actions{
+  max-width:56rem;margin:0 auto 4rem;padding:0 clamp(.7rem,3vw,2rem);
+  display:flex;flex-direction:column;gap:.65rem;
+}
+
+.ca-entete{
+  display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;
+  border-bottom:2px solid var(--encre);padding-bottom:.6rem;margin-bottom:.2rem;
+}
+.ca-marque{font-family:var(--titre);font-weight:700;font-size:1.3rem;margin:0;
+  font-variation-settings:"SOFT" 46,"WONK" 1}
+.ca-entete h2{font-family:var(--titre);font-weight:600;font-size:1.15rem;margin:0;color:var(--seve);
+  font-variation-settings:"SOFT" 34,"WONK" 1}
+.ca-souslegende{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--encre-douce);margin:0 0 0 auto}
+
+.ca-bloc{
+  border:1px solid var(--trait);border-top:2px solid var(--lichen);border-radius:var(--rayon);
+  background:var(--vase-creuse);padding:.85rem 1rem .95rem;
+}
+.ca-large{grid-column:1/-1}
+.ca-bloc h3{
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--encre-douce);margin:0 0 .6rem;font-weight:500;
+}
+.ca-ligne{margin:.35rem 0;font-size:.9rem;line-height:1.45}
+.ca-ligne b{color:var(--seve);font-weight:600}
+.ca-note{font-size:.78rem;color:var(--encre-douce);margin:.5rem 0 0;line-height:1.4}
+
+.ca-formule{font-family:var(--mono);font-size:.98rem;color:var(--encre-douce);margin:0 0 .7rem}
+.ca-formule span{color:var(--encre);font-weight:600}
+
+.ca-resultats{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+.ca-resultat{border-radius:var(--rayon);padding:.5rem .6rem;background:var(--vase);border:1px solid var(--trait)}
+.ca-resultat b{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.ca-resultat span{display:block;font-family:var(--mono);font-size:.62rem;color:var(--encre-douce);margin:.1rem 0 .3rem}
+.ca-resultat p{margin:0;font-size:.8rem;line-height:1.35}
+.ca-franc{border-left:3px solid var(--lichen)}
+.ca-franc b{color:var(--lichen)}
+.ca-court{border-left:3px solid var(--fleuve)}
+.ca-court b{color:var(--fleuve)}
+.ca-manque{border-left:3px solid var(--ecorce)}
+.ca-manque b{color:var(--ecorce)}
+.ca-rien{border-left:3px solid var(--encre-douce)}
+.ca-rien b{color:var(--encre-douce)}
+
+.ca-stats{list-style:none;margin:0;padding:0}
+.ca-stats li{margin:.4rem 0;font-size:.9rem;line-height:1.4}
+.ca-stats b{color:var(--seve);font-family:var(--titre);font-weight:600;margin-right:.3em;
+  font-variation-settings:"SOFT" 30}
+
+.ca-deux-col{display:grid;grid-template-columns:1fr 1fr;gap:0 1.4rem}
+.ca-trois-col{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+.ca-reaction{background:var(--vase);border:1px solid var(--trait);border-radius:var(--rayon);padding:.55rem .65rem}
+.ca-reaction b{display:block;font-family:var(--titre);font-weight:600;font-size:.95rem;margin-bottom:.15rem;
+  color:var(--seve);font-variation-settings:"SOFT" 30}
+.ca-reaction span{display:block;font-size:.76rem;color:var(--encre-douce);margin-bottom:.3rem;font-style:italic}
+.ca-reaction p{margin:0;font-size:.84rem}
+
+.ca-pied{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;color:var(--encre-douce);
+  text-align:center;margin:.4rem 0 0;
+}
+
+/* mise en grille : les blocs simples se rangent deux par deux */
+.carte-actions{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+.ca-entete,.ca-pied{grid-column:1/-1}
+
+@media (max-width:640px){
+  .carte-actions{grid-template-columns:1fr}
+  .ca-resultats{grid-template-columns:1fr 1fr}
+  .ca-deux-col,.ca-trois-col{grid-template-columns:1fr}
+}
+
+/* ================= IMPRESSION : tenir sur une seule page A4 ================= */
+@media print{
+  @page{size:A4 portrait;margin:10mm}
+  .barre,.mode-emploi,.pied-site,.haut,.saut-contenu{display:none !important}
+  html,body{background:#fff !important;color:#000 !important}
+  html{font-size:12.5px}
+  .carte-actions{
+    display:grid;grid-template-columns:1fr 1fr;gap:.45rem;
+    max-width:none;padding:0;margin:0;
+  }
+  .ca-bloc{background:#fff;border-color:#999;box-shadow:none;padding:.55rem .7rem .65rem;break-inside:avoid}
+  .ca-entete{border-bottom-color:#000}
+  .ca-resultat,.ca-reaction{background:#fff;border-color:#999}
+  .ca-ligne b,.ca-stats b,.ca-reaction b,.ca-entete h2{color:#000 !important}
+  .ca-franc,.ca-court,.ca-manque,.ca-rien{border-left-color:#666 !important}
+  .ca-franc b,.ca-court b,.ca-manque b,.ca-rien b{color:#000 !important}
+  .ca-note,.ca-souslegende,.ca-pied,.ca-resultat span,.ca-reaction span{color:#444 !important}
+}
