@@ -114,9 +114,40 @@ def extraire_glossaire(doc):
     return glossaire
 
 
+def extraire_termes_meneur(doc):
+    """Deux termes du bloc adversaire (chapitre V, « Le format ») : Ombre et
+    Veut. Jamais Fait — ce mot désigne déjà, dans le vocabulaire des
+    joueureuses, la preuve d'une enquête ; l'écraser romprait ce terme-là.
+    Ces deux entrées ne sont utilisables que posées à la main (`{{Ombre}}`,
+    `{{Veut}}`) : ni le balayage du gras, ni le marquage automatique par
+    chapitre n'iront jamais les chercher tout seuls, parce que « veut » est un
+    mot du français courant bien avant d'être un terme du jeu."""
+    t = doc.raw
+    debut = t.find("## Le format")
+    fin = t.find("## Les trois gabarits")
+    assert debut != -1 and fin != -1, "tableau « Le format » introuvable"
+    bloc = t[debut:fin]
+    voulus = {"Ombre", "Veut"}
+    resultat = {}
+    for ligne in bloc.split("\n"):
+        s = ligne.strip()
+        if not s.startswith("|"):
+            continue
+        parts = [p.strip() for p in re.split(r"(?<!\\)\|", s.strip("|"))]
+        if len(parts) != 2:
+            continue
+        terme = re.sub(r"^\*\*|\*\*$", "", parts[0].strip())
+        if terme in voulus:
+            resultat[terme] = inline(parts[1], doc)
+    manquants = voulus - resultat.keys()
+    assert not manquants, "termes introuvables dans « Le format » : %s" % manquants
+    return resultat
+
+
 # noms propres : le lecteur les comprend dès la première page, inutile de les
-# redéfinir à chaque chapitre.
-EXCLUS_PREMIERE_OCCURRENCE = {"Bas-Gué", "Vasque"}
+# redéfinir à chaque chapitre. Ombre et Veut : posés à la main uniquement,
+# jamais devinés (voir extraire_termes_meneur).
+EXCLUS_PREMIERE_OCCURRENCE = {"Bas-Gué", "Vasque", "Ombre", "Veut"}
 
 MOTIF_PROTEGE = re.compile(
     r"\*\*.+?\*\*|\*[^*\n]+?\*|\[\[.+?\]\]|\x00TERME:[^\x00]+\x00[^\x00]*\x00/TERME\x00")
@@ -199,6 +230,11 @@ def inline(text, doc):
         return '<a class="lien-interne" href="%s">%s</a>' % (href, lab)
 
     text = re.sub(r"!\[\[([^\]]+)\]\]", lambda m: "\x00IMG:%s\x00" % m.group(1), text)
+    # {{Nom}} : un déclencheur d'infobulle posé à la main, pour un terme qui
+    # n'appartient pas au vocabulaire du chapitre II — jamais deviné par
+    # balayage automatique, seulement là où on l'écrit explicitement.
+    text = re.sub(r"\{\{([^}]+)\}\}",
+                   lambda m: "\x00TERME:%s\x00%s\x00/TERME\x00" % (m.group(1), m.group(1)), text)
     text = esc(text)
     text = re.sub(r"\[\[([^\]]+)\]\]", wl, text)
     text = re.sub(r"\*\*\*(.+?)\*\*\*", r"<strong><em>\1</em></strong>", text)
@@ -428,6 +464,10 @@ def main():
         collect_headings(d)
 
     glossaire = extraire_glossaire(DOCS["joueureuses"])
+    termes_meneur = extraire_termes_meneur(DOCS["meneur"])
+    for terme, definition in termes_meneur.items():
+        assert terme not in glossaire, "« %s » existe déjà dans le vocabulaire des joueureuses" % terme
+        glossaire[terme] = definition
     io.open("assets/glossaire-data.js", "w", encoding="utf-8").write(
         "// Généré automatiquement par build.py depuis le chapitre II "
         "(Vocabulaire) du manuel des joueureuses. Ne pas éditer à la main.\n"

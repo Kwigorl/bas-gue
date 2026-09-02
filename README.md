@@ -106,6 +106,8 @@ Sur les deux pages de manuel, les mots du chapitre II (Vocabulaire) reçoivent u
 
 Après toute modification du chapitre Vocabulaire, `python3 build.py` régénère `glossaire-data.js` tout seul ; rien d'autre à toucher.
 
+**Deux termes posés à la main, hors du chapitre II.** `Ombre` et `Veut` viennent du tableau « Le format » du manuel des meneureuses (chapitre V), pas du vocabulaire des joueureuses. Iels ne sont **jamais** trouvés par balayage automatique — ni le gras, ni le marquage par chapitre ne les cherchent (`EXCLUS_PREMIERE_OCCURRENCE`) — parce que « veut » est un verbe très courant avant d'être un terme, et « ombre » désigne aussi, ailleurs dans le même manuel, la faiblesse d'un trait ou le sens courant de « sortir de l'ombre ». La seule façon de faire apparaitre l'infobulle est de l'écrire explicitement dans le `.md`, avec la syntaxe `{{Ombre}}` / `{{Veut}}` — jamais en tapant le mot normalement, même en gras.
+
 **Au-delà du gras : une occurrence par chapitre.** Le gras seul ratait beaucoup de vraies occurrences — un mot du glossaire écrit en toutes lettres, capitalisé, jamais mis en valeur. `build.py` en marque désormais **une par grand chapitre (titre de niveau 1)**, dans le texte courant uniquement (jamais dans un tableau, un titre, un gras déjà traité, une italique — une italique nomme presque toujours un élément de règle précis, *Étai*, *Point faible*, et couper le mot en deux dedans serait moche). La fonction `marquer_premiere_occurrence()` fait ce travail, et `doc.glossaire_vu` se remet à zéro à chaque nouveau chapitre.
 
 Deux noms propres en sont exclus — `EXCLUS_PREMIERE_OCCURRENCE` en tête de fichier — **Bas-Gué** et **Vasque** : le lecteur les comprend dès la première page, inutile de les redéfinir à chaque chapitre.

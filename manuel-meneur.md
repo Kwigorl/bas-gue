@@ -14,7 +14,7 @@ tags:
 
 > [!abstract]+ Sommaire
 > **[[#I. Mener Bas-Gué]]**
-> [[#La forme d'une séance]] · [[#Cinq consignes]] · [[#Quand lancer les dés]] · [[#Ce qui tourne mal]] · [[#Ce qui se subit et ce qui se construit]]
+> [[#La forme d'une séance]] · [[#Cinq consignes]] · [[#Porter le coup de trop]] · [[#Quand lancer les dés]] · [[#Ce qui tourne mal]] · [[#Ce qui se subit et ce qui se construit]]
 >
 > **[[#II. La séance zéro]]**
 > [[#Le test de la porte]] · [[#L'espèce ne détermine pas la Position]] · [[#Ce qu'on ne joue pas]] · [[#Ce qu'on annonce à voix haute]] · [[#Les trois questions collectives]] · [[#S'arrêter]] · [[#Ta check-list]]
@@ -71,6 +71,18 @@ Une aventure de Bas-Gué suit toujours le même arc. Connais-le, et tu improvise
 **4. La violence doit être la mauvaise option.** Chaque adversaire a une ligne *ce qu'iel veut*. Rappelle-la à voix haute, une fois, avant le premier jet.
 
 **5. Les trois portes d'une enquête fonctionnent toujours.** Ne décide jamais à l'avance par laquelle un fait s'obtient. Ton travail est de dire ce que chacune coute ici, maintenant.
+
+### Porter le coup de trop
+
+La consigne n°4 vaut aussi à zéro point de vie. **Achever quelqu'un à terre n'est presque jamais ce qu'un adversaire veut.** Un Comparse payé à la journée veut rentrer, pas porter un cadavre. Trogne veut qu'on l'écoute, pas un corps sur son quai. La plupart de tes adversaires ont déjà obtenu ce qu'iels voulaient au moment où quelqu'un tombe — le combat s'arrête là, pas un coup de plus.
+
+Ne fais jamais ce choix parce que le PNJ rejoue et touche. Demande-toi : *cet adversaire précis a-t-il, dans sa propre {{Ombre}} ou son propre {{Veut}}, une raison de vouloir cette mort-là ?*
+
+- Un mercenaire payé, un garde qui fait sa ronde : non, presque toujours.
+- Le chien de ferme, qui *ne négocie pas* : peut-être le seul cas franc du bestiaire.
+- Quelqu'un envoyé spécifiquement pour tuer : oui — et dis-le avant le premier jet, pas après.
+
+**Cette règle n'existe pas pour que les personnages meurent souvent.** Elle existe pour que, le jour où quelqu'un meurt, ce soit parce qu'un adversaire précis le voulait vraiment — jamais parce que les dés sont tombés deux fois de suite du mauvais côté.
 
 ## Quand lancer les dés
 

@@ -928,6 +928,8 @@ Un·e allié·e te relève en y consacrant une **action complète**. C'est la se
 | On te relève **plus tard dans la scène** | Tu repars à 1 point de vie, **avec une marque**. |
 | **Personne** ne te relève avant la fin de la scène | **Tu meurs.** |
 
+> **Ce dernier coup n'est jamais automatique.** Lae meneureuse ne le porte pas parce qu'un jet touche — c'est un choix, et il doit se justifier par ce que cet adversaire précis veut vraiment. [[Bas-Gué — Manuel du meneur#Porter le coup de trop|Voir Porter le coup de trop]].
+
 ## Les marques
 
 Une marque s'obtient d'une seule façon : **être resté·e à terre**.

@@ -34,5 +34,7 @@ window.BG_GLOSSAIRE = {
  "Outil vivant": "Un objet qu'on nourrit et qu'on taille. Il se souvient de qui l'entretient : <strong>tout outil vivant est une preuve</strong>.",
  "Gousse": "Votre coque vivante, votre quartier général, et le seul bien du groupe.",
  "Greffon": "Un aménagement de la Gousse. Une aventure terminée en rapporte un.",
- "Inclinaison": "De −3 <em>(Sauvage)</em> à +3 <em>(Greffé)</em>. Elle ne bouge que sur des actes publics."
+ "Inclinaison": "De −3 <em>(Sauvage)</em> à +3 <em>(Greffé)</em>. Elle ne bouge que sur des actes publics.",
+ "Ombre": "Sa faille. C'est ce que trouvent <em>Point faible</em>, <em>Diagnostic</em> et <em>Interroger</em>.",
+ "Veut": "Ce qu'iel accepterait <strong>à la place</strong> du combat."
 };
