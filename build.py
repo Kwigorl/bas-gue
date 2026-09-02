@@ -385,8 +385,33 @@ def toc_html(doc):
     return "\n".join(items)
 
 
+NBSP = "\u00A0"          # espace insécable, pleine chaisse — avant :
+NBSP_FINE = "\u202F"     # espace fine insécable — avant ; ! ? et dans « »
+MOTIF_SEGMENT_PROTEGE = re.compile(
+    r"<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>|<[^>]+>", re.S)
+
+
+def typographie_fr(html_texte):
+    """Espace insécable avant : (pleine) et avant ; ! ? (fine), et autour des
+    guillemets « ». Ne touche jamais l'intérieur d'une balise, d'un attribut,
+    ou d'un <script>/<style> — seulement le texte visible."""
+    morceaux = MOTIF_SEGMENT_PROTEGE.split(html_texte)
+    balises = MOTIF_SEGMENT_PROTEGE.findall(html_texte)
+    for i, t in enumerate(morceaux):
+        t = re.sub(r"[ \t\u00A0\u202F]+:", NBSP + ":", t)
+        t = re.sub(r"[ \t\u00A0\u202F]+([;!?])", NBSP_FINE + r"\1", t)
+        t = re.sub(r"«[ \t\u00A0\u202F]*", "«" + NBSP_FINE, t)
+        t = re.sub(r"[ \t\u00A0\u202F]*»", NBSP_FINE + "»", t)
+        morceaux[i] = t
+    out = [morceaux[0]]
+    for b, seg in zip(balises, morceaux[1:]):
+        out.append(b)
+        out.append(seg)
+    return "".join(out)
+
+
 def page(doc, tpl):
-    return (tpl
+    return typographie_fr(tpl
             .replace("{{TITRE}}", esc(doc.title))
             .replace("{{TOC}}", toc_html(doc))
             .replace("{{CORPS}}", build_body(doc))

@@ -89,19 +89,27 @@
 
 /* ================= IMPRESSION : tenir sur une seule page A4 ================= */
 @media print{
-  @page{size:A4 portrait;margin:10mm}
+  @page{size:A4 portrait;margin:7mm}
   .barre,.mode-emploi,.pied-site,.haut,.saut-contenu{display:none !important}
   html,body{background:#fff !important;color:#000 !important}
-  html{font-size:12.5px}
+  html{font-size:9.4px}
   .carte-actions{
-    display:grid;grid-template-columns:1fr 1fr;gap:.45rem;
+    display:grid;grid-template-columns:1fr 1fr;gap:.22rem;
     max-width:none;padding:0;margin:0;
   }
-  .ca-bloc{background:#fff;border-color:#999;box-shadow:none;padding:.55rem .7rem .65rem;break-inside:avoid}
-  .ca-entete{border-bottom-color:#000}
-  .ca-resultat,.ca-reaction{background:#fff;border-color:#999}
+  .ca-bloc{background:#fff;border-color:#999;box-shadow:none;padding:.3rem .5rem .35rem;break-inside:avoid}
+  .ca-bloc h3{margin-bottom:.35rem}
+  .ca-entete{border-bottom-color:#000;padding-bottom:.2rem;margin-bottom:0;gap:.5rem}
+  .ca-formule{margin-bottom:.4rem}
+  .ca-resultats{gap:.3rem}
+  .ca-resultat,.ca-reaction{background:#fff;border-color:#999;padding:.28rem .4rem}
+  .ca-resultat span,.ca-reaction span{margin:.05rem 0 .15rem}
+  .ca-ligne{margin:.14rem 0}
+  .ca-stats li{margin:.2rem 0}
   .ca-ligne b,.ca-stats b,.ca-reaction b,.ca-entete h2{color:#000 !important}
   .ca-franc,.ca-court,.ca-manque,.ca-rien{border-left-color:#666 !important}
   .ca-franc b,.ca-court b,.ca-manque b,.ca-rien b{color:#000 !important}
   .ca-note,.ca-souslegende,.ca-pied,.ca-resultat span,.ca-reaction span{color:#444 !important}
+  .ca-note{margin-top:.3rem}
+  .ca-pied{margin-top:.1rem}
 }
