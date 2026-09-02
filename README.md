@@ -77,7 +77,7 @@ C’est écrit à trois endroits, et les trois comptent :
 - **`licence.html`**, qui l’explique en français clair : ce qu’on peut faire sans demander, ce qui demande une autorisation, et ce que la licence ne couvre pas ;
 - **`LICENSE`**, à la racine, que GitHub affiche.
 
-Le fichier `LICENSE` contient une note à ton intention, à supprimer une fois lue : il désigne les licences sans en reproduire le texte intégral, et donne les deux commandes `curl` pour récupérer les textes officiels. Aucune licence non commerciale ne figure dans le menu déroulant de GitHub à la création d’un dépôt, ni dans son encadré « About » : c’est attendu, ça n’enlève rien à sa validité.
+Le fichier `LICENSE` désigne les deux licences sans en reproduire le texte intégral, et renvoie vers les textes officiels. Aucune licence non commerciale ne figure dans le menu déroulant de GitHub à la création d’un dépôt, ni dans son encadré « About » : c’est attendu, ça n’enlève rien à sa validité.
 
 ### Contribuer, et rester éditable
 
